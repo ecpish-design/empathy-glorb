@@ -12,14 +12,16 @@
   <div class="stars" aria-hidden="true"></div>
 
   <header class="topbar" aria-label="Mission controls">
-    <button id="backBtn" class="top-control hidden" type="button" aria-label="Go back one screen">← BACK</button>
-    <div class="brand">GLORB // EMPATHY MISSION</div>
+    <div class="brand">GLORB <span>//</span> EMPATHY MISSION</div>
     <div class="top-actions">
-      <span id="stageLabel" class="stage-label">START</span>
-      <button id="teacherBtn" class="top-control" type="button">TEACHER INFO</button>
+      <button id="backBtn" class="top-control nav-control" type="button" aria-label="Go back one screen">← Back</button>
+      <button id="forwardBtn" class="top-control nav-control" type="button" aria-label="Go forward one screen" disabled>→ Forward</button>
       <button id="readBtn" class="top-control read-control" type="button" aria-pressed="false">
-        <span class="sound-icon" aria-hidden="true">◖)))</span><span id="readLabel">READ</span>
+        <span class="sound-icon" aria-hidden="true">🔊</span><span id="readLabel">Read aloud</span>
       </button>
+      <button id="helpBtn" class="top-control" type="button">? Help</button>
+      <button id="teacherBtn" class="top-control" type="button">ⓘ More information</button>
+      <span id="stageLabel" class="stage-label">START</span>
     </div>
   </header>
 
@@ -115,6 +117,22 @@
         </section>
       </div>
       <button id="closeTeacherBottom" class="button primary" type="button">← VIEW FOR STUDENTS</button>
+    </div>
+  </div>
+
+  <div id="helpModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="modal-card help-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">HELP</p>
+          <h2 id="helpTitle">USING THE MISSION</h2>
+        </div>
+        <button id="closeHelpBtn" class="icon-btn" type="button" aria-label="Close help">×</button>
+      </div>
+      <p><strong>Back</strong> returns to the last screen.</p>
+      <p><strong>Read aloud</strong> reads the words on the current screen. Press it again to stop.</p>
+      <p><strong>More information</strong> opens the teacher notes and references.</p>
+      <p>Your mission answers are remembered during this browser session, so going back will not make you redo finished work.</p>
     </div>
   </div>
 

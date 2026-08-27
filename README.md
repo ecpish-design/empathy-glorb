@@ -1,31 +1,23 @@
-# empathy-school-glorb
+# GLORB // EMPATHY MISSION
 
-GLORB // EMPATHY MISSION
-UX/UI clarity + teaching-feedback revision
+Interactive Year 5–6 empathy lesson in the GLORB Social Skills Framework.
+
+## Current UX revision
+- Conversation Mission-style top control bar with Back, Read aloud, Help and More information.
+- Simpler student language across the empathy teaching sequence.
+- Larger Mission 1 case illustrations so visual clues are easier to see.
+- Specific teaching feedback for every Mission 1 correct and incorrect feeling choice.
+- Correct feedback names the face, body, words and situation clues and keeps the language of "might".
+- Completed and in-progress mission answers are stored in sessionStorage so Back does not reset the work.
+- Mission 2 uses short, plain-language HELP / LISTEN / CHECK choices.
+- Teacher information includes curriculum, evidence base, instructional rationale and limitations.
+- Read aloud changes to Stop while speaking.
+- Certificate frames the student as Glorb's Earth Helper and does not claim mastery.
 
 ## Files
-- index.html
-- style.css
-- script.js
-- assets/
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/`
 
-## This revision includes
-- A short “Meet Glorb” orientation before the incoming transmission
-- Teacher information with curriculum, evidence, accessibility rationale, limits and references
-- Read control that changes to Stop while speaking
-- Back navigation across student screens
-- Larger Mission 1 case illustrations
-- Explicit correct and incorrect clue-based teaching feedback for every Mission 1 answer
-- Mixed correct-answer positions
-- Wrong answers grey out and cannot be selected again
-- Mission progress, opened clues, attempted answers and correct responses preserved in sessionStorage
-- Returning to a completed mission shows the saved completed work rather than resetting it
-- One-situation-at-a-time Mission 2
-- Certificate framed around the learner helping Glorb, without claiming the learning intention was “met”
-- Responsive desktop, iPad and phone layouts
-
-## Run
-Open index.html in a modern browser, or upload the folder contents to the repository root and enable GitHub Pages.
-
-## Privacy
-The learner name and mission progress are kept only in the current browser session using sessionStorage. There is no student account or backend.
+Upload the folder contents to the GitHub Pages repository root.
