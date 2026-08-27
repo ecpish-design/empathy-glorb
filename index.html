@@ -28,95 +28,87 @@
   <main id="app" aria-live="off"></main>
 
   <div id="teacherModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="teacherTitle">
-    <div class="modal-card">
-      <div class="modal-head">
+    <div class="modal-card teacher-card">
+      <div class="modal-head teacher-head">
         <div>
-          <p class="eyebrow">MORE INFORMATION</p>
-          <h2 id="teacherTitle">GLORB // EMPATHY MISSION</h2>
+          <p class="eyebrow">FOR ADULTS</p>
+          <h2 id="teacherTitle">About the Empathy Mission</h2>
         </div>
-        <button id="closeTeacherBtn" class="icon-btn" type="button" aria-label="Close teacher information">×</button>
+        <button id="closeTeacherBtn" class="icon-btn teacher-close" type="button" aria-label="Close teacher information">×</button>
       </div>
 
-      <div class="teacher-intro">
-        <p><strong>GLORB // EMPATHY MISSION is an interactive explicit-teaching lesson.</strong> Students help Glorb notice social and emotional clues, make a careful guess about what another person might be experiencing, check rather than assume, and choose a response that fits what the person may need.</p>
-      </div>
+      <nav class="teacher-tabs" aria-label="Empathy Mission information sections">
+        <button class="teacher-tab active" type="button" data-tab="about">About</button>
+        <button class="teacher-tab" type="button" data-tab="learning">Learning</button>
+        <button class="teacher-tab" type="button" data-tab="curriculum">Curriculum</button>
+        <button class="teacher-tab" type="button" data-tab="evidence">Evidence + references</button>
+        <button class="teacher-tab" type="button" data-tab="use">Use + interpretation</button>
+      </nav>
 
-      <div class="teacher-grid">
-        <section class="wide">
-          <h3>WHAT ARE STUDENTS LEARNING?</h3>
-          <p>The lesson uses one repeated process:</p>
-          <p><strong>NOTICE → CAREFUL GUESS → CHECK → RESPOND</strong></p>
-          <p><strong>NOTICE</strong> more than one clue. <strong>CAREFUL GUESS</strong> using words such as <em>might</em>. <strong>CHECK</strong> because the first interpretation may be wrong. <strong>RESPOND</strong> with words or actions that fit what the person may need.</p>
+      <div class="teacher-panels">
+        <section class="teacher-panel active" data-panel="about">
+          <div class="info-grid two-col">
+            <article class="info-card"><h3>What is it?</h3><p><strong>GLORB // Empathy Mission</strong> is an explicit-teaching interactive lesson. Students help Glorb notice clues, make a careful guess, check what someone may need and choose a kind response.</p></article>
+            <article class="info-card"><h3>What it is for</h3><p>It makes empathy reasoning more visible by teaching one simple sequence: <strong>NOTICE → CAREFUL GUESS → CHECK → RESPOND.</strong></p></article>
+            <article class="info-card"><h3>Learning focus</h3><p>Students practise using more than one clue, staying open to being wrong, asking instead of assuming and choosing a response that fits the situation.</p></article>
+            <article class="info-card"><h3>Teaching aid, not a real-life test</h3><p>Completion shows supported performance inside this lesson. It does not prove that a student can use the skill independently in every real-life interaction.</p></article>
+          </div>
         </section>
 
-        <section>
-          <h3>WHY USE A CAREFUL GUESS?</h3>
-          <p>A facial expression, body position or behaviour can give useful information, but it does not prove how somebody feels. The mission therefore asks students to combine clues from the person’s <strong>face, body, words and situation</strong> before making a tentative guess.</p>
-          <p>The checking step is important because empathy is not the same as decoding a face. Students are encouraged to stay open to being wrong and communicate with the other person.</p>
+        <section class="teacher-panel" data-panel="learning">
+          <div class="info-grid two-col">
+            <article class="info-card wide"><h3>Learning sequence</h3><p class="sequence">NOTICE → CAREFUL GUESS → CHECK → RESPOND</p></article>
+            <article class="info-card"><h3>Notice</h3><p>Look for more than one clue from the person’s face, body, words and situation.</p></article>
+            <article class="info-card"><h3>Careful guess</h3><p>Think about what the person <em>might</em> be feeling. A clue can help, but it is not proof.</p></article>
+            <article class="info-card"><h3>Check</h3><p>Ask what the person wants or needs instead of deciding for them.</p></article>
+            <article class="info-card"><h3>Respond</h3><p>Choose kind words or help that fit. Respect the person’s answer.</p></article>
+            <article class="info-card wide"><h3>Students practise</h3><p>Combining clues, using tentative language, checking interpretations, and choosing between help, listening, company or space.</p></article>
+          </div>
         </section>
 
-        <section>
-          <h3>AUSTRALIAN CURRICULUM CONNECTION</h3>
-          <p>The mission aligns most directly with the Australian Curriculum Version 9.0 <strong>Personal and Social capability</strong>, especially <strong>Social Awareness: Empathy</strong>, with supporting links to Relational Awareness, Communication and Decision-making <a href="https://v9.australiancurriculum.edu.au/curriculum-information/understand-this-general-capability/personal-and-social-capability" target="_blank" rel="noopener">[1]</a>.</p>
-          <p>ACARA describes the capability as supporting students to understand themselves and others and navigate relationships.</p>
+        <section class="teacher-panel" data-panel="curriculum">
+          <div class="info-grid two-col">
+            <article class="info-card"><h3>Australian Curriculum v9.0</h3><p><strong>Personal and Social Capability</strong><br>Primary link: <strong>Social Awareness → Empathy</strong></p></article>
+            <article class="info-card"><h3>Years 5–6 connection</h3><p>The lesson supports recognising emotions, needs and perspectives in social situations, with supporting links to Relational Awareness, Communication and Decision-making.</p></article>
+            <article class="info-card"><h3>What this lesson practises</h3><p>Using social and emotional clues carefully, checking an interpretation and selecting a response that may fit what the person needs.</p></article>
+            <article class="info-card"><h3>Curriculum source</h3><p><a href="https://v9.australiancurriculum.edu.au/curriculum-information/understand-this-general-capability/personal-and-social-capability" target="_blank" rel="noopener"><strong>Australian Curriculum v9.0 — Personal and Social Capability</strong></a></p></article>
+          </div>
         </section>
 
-        <section>
-          <h3>WHY TEACH IT EXPLICITLY?</h3>
-          <p>Some social expectations are unwritten and can be difficult to infer. The mission makes the reasoning process visible by breaking it into small, named steps and giving students guided practice.</p>
-          <p>Research on school-based social and emotional learning supports structured, sequenced, active, focused and explicit teaching approaches <a href="https://doi.org/10.1111/j.1467-8624.2010.01564.x" target="_blank" rel="noopener">[2]</a>.</p>
+        <section class="teacher-panel" data-panel="evidence">
+          <div class="evidence-layout">
+            <div class="evidence-cards">
+              <article class="info-card"><h3>Explicit teaching</h3><p>The mission breaks an unwritten social skill into named steps, then gives guided practice and feedback.</p></article>
+              <article class="info-card"><h3>Careful interpretation</h3><p>The lesson does not teach that a face or behaviour reveals a feeling for certain. Students use several clues and then check.</p></article>
+              <article class="info-card"><h3>Segmentation</h3><p>One main task is shown at a time so students can focus on the reasoning instead of holding the whole lesson in mind.</p></article>
+              <article class="info-card"><h3>Formative feedback</h3><p>Wrong answers explain why the choice fits less well and allow another attempt. Correct answers also explain the clues.</p></article>
+              <article class="info-card"><h3>Age-respectful design</h3><p>Language and task load can be simplified without making the visual style or social situations feel younger than the learner.</p></article>
+            </div>
+            <article class="info-card references-card">
+              <h3>References</h3>
+              <ol class="teacher-refs">
+                <li><strong>Australian Curriculum, Assessment and Reporting Authority. (2022).</strong> <em>Australian Curriculum Version 9.0: Personal and Social Capability.</em></li>
+                <li><strong>Durlak, J. A., et al. (2011).</strong> The impact of enhancing students’ social and emotional learning: A meta-analysis of school-based universal interventions.</li>
+                <li><strong>Victorian Department of Education and Training. (2020).</strong> <em>High Impact Teaching Strategies: Excellence in Teaching and Learning.</em></li>
+                <li><strong>Rey, G. D., et al. (2019).</strong> A meta-analysis of the segmenting effect in multimedia learning.</li>
+                <li><strong>Mayer, R. E. (2017).</strong> Using multimedia for e-learning.</li>
+                <li><strong>Powell, T., et al. (2024).</strong> Co-designed, age-appropriate psychoeducation resources for autistic children.</li>
+              </ol>
+            </article>
+          </div>
         </section>
 
-        <section>
-          <h3>WHY DOES THE FEEDBACK EXPLAIN THE CLUES?</h3>
-          <p>The activities are designed as formative practice rather than a score of social competence. Feedback names the exact clues that support or weaken a choice, explains the reasoning, and lets the student try again.</p>
-          <p>This is consistent with explicit teaching and feedback approaches in the Victorian <strong>High Impact Teaching Strategies</strong> <a href="https://www.education.vic.gov.au/school/teachers/teachingresources/practice/improve/Pages/hits.aspx" target="_blank" rel="noopener">[3]</a>.</p>
-        </section>
-
-        <section>
-          <h3>WHY IS THE INFORMATION BROKEN INTO SMALL STEPS?</h3>
-          <p>Short instructions, repeated layouts, one main task at a time and relevant images reduce unnecessary processing demands. The aim is to simplify the hidden social rule, not make the learner feel younger.</p>
-          <p>The design is consistent with research on multimedia learning and segmentation, where information is divided into meaningful parts so attention can remain on the learning itself <a href="https://doi.org/10.1016/j.edurev.2018.12.003" target="_blank" rel="noopener">[4]</a>.</p>
-        </section>
-
-        <section>
-          <h3>WHY IS THE STUDENT THE EARTH HELPER?</h3>
-          <p>Glorb is positioned as the learner. The student helps an alien understand confusing Earth behaviour instead of being positioned as the person whose social skills need fixing.</p>
-          <p>This role reversal supports a low-pressure, age-respectful learning experience and allows foundational social concepts to be taught without using an infantile visual or conversational register.</p>
-        </section>
-
-        <section class="wide">
-          <h3>HOW TO SUPPORT A STUDENT</h3>
-          <ul>
-            <li>Let the student attempt each item before prompting.</li>
-            <li>Ask, “Which clues helped you decide?”</li>
-            <li>Ask, “Could those clues mean something else?”</li>
-            <li>Ask, “What could you check with the person?”</li>
-            <li>Use the same NOTICE → CAREFUL GUESS → CHECK → RESPOND sequence in later classroom discussion or role-play.</li>
-          </ul>
-          <div class="teacher-note"><strong>Transfer matters:</strong> completing a digital scenario does not prove that the skill will automatically be used in a real interaction. Discussion, observation and practice in natural settings remain important.</div>
-        </section>
-
-        <section class="wide">
-          <h3>IMPORTANT LIMITS</h3>
-          <p><strong>The Empathy Mission is an educational practice activity. It is not a clinical, medical or psychological assessment.</strong></p>
-          <p>It does not measure empathy as a trait and it does not determine what another person is actually feeling. People can express the same emotion in different ways, and the same visible clue can have more than one explanation.</p>
-          <p>The research base supports the <strong>teaching and design rationale</strong> used in GLORB. It does not establish that this individual GLORB lesson has been independently proven to improve outcomes.</p>
-        </section>
-
-        <section class="wide">
-          <h3>REFERENCES + FURTHER READING</h3>
-          <ol class="teacher-refs">
-            <li>Australian Curriculum, Assessment and Reporting Authority. (2022). <em>Australian Curriculum Version 9.0: Personal and Social Capability.</em></li>
-            <li>Durlak, J. A., Weissberg, R. P., Dymnicki, A. B., Taylor, R. D., &amp; Schellinger, K. B. (2011). The impact of enhancing students’ social and emotional learning: A meta-analysis of school-based universal interventions. <em>Child Development, 82</em>(1), 405–432.</li>
-            <li>Victorian Department of Education and Training. (2020). <em>High Impact Teaching Strategies: Excellence in Teaching and Learning.</em></li>
-            <li>Rey, G. D., et al. (2019). A meta-analysis of the segmenting effect in multimedia learning.</li>
-            <li>Mayer, R. E. (2017). Using multimedia for e-learning.</li>
-            <li>Powell, T., et al. (2024). Co-designed, age-appropriate psychoeducation resources for autistic children.</li>
-          </ol>
+        <section class="teacher-panel" data-panel="use">
+          <div class="info-grid two-col">
+            <article class="info-card important"><h3>Important</h3><p><strong>This is an educational practice activity. It is not a clinical, medical or psychological assessment.</strong></p></article>
+            <article class="info-card"><h3>Use with in-person teaching</h3><p>Pair the mission with discussion, adult modelling, role-play and real examples outside the screen.</p></article>
+            <article class="info-card"><h3>Clues are contextual</h3><p>The same clue can have more than one meaning. Encourage students to stay curious and check rather than assume.</p></article>
+            <article class="info-card"><h3>Support is individual</h3><p>Different people may want help, listening, company or space. The lesson gives examples, not one fixed rule for everyone.</p></article>
+            <article class="info-card wide"><h3>How to support a student</h3><p>Let the student try first. Then ask: <strong>Which clues helped you decide? Could those clues mean something else? What could you ask the person?</strong></p></article>
+            <article class="info-card wide"><h3>Interpret completion carefully</h3><p>The research base supports the teaching and design rationale used here. It does not show that completing this lesson proves real-world empathy or that GLORB itself has been independently proven effective.</p></article>
+          </div>
         </section>
       </div>
-      <button id="closeTeacherBottom" class="button primary" type="button">← VIEW FOR STUDENTS</button>
     </div>
   </div>
 

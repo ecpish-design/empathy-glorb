@@ -35,11 +35,11 @@ const cases = [
     situation:'After lunch, a classmate has their head on the desk.',
     clues:{FACE:'Eyes closed. Face relaxed.', BODY:'Very still.', WORDS:'Not speaking.', SITUATION:'Just after lunch.'},
     options:['Furious','Tired','Proud','Excited'], correct:'Tired',
-    success:'Yes. Tired fits best because their eyes are closed, their face is relaxed, their body is very still and it is just after lunch. These clues suggest they might be tired. You would still check instead of assuming.',
+    success:'Yes. Closed eyes, a relaxed face and a still body suggest they might be tired.',
     feedback:{
-      Furious:'Not quite. Furious often has stronger clues such as a tense body, louder voice or fast movement. This person looks relaxed and very still.',
-      Proud:'Not quite. There are no clues that they feel pleased about something they did. Their eyes are closed and their body looks low-energy.',
-      Excited:'Not quite. Excited often has more energy, movement or an eager voice. This person is quiet, relaxed and very still.'
+      Furious:'Not quite. Furious usually has stronger signs like tension, loud words or fast movement.',
+      Proud:'Not quite. There are no clues that they feel pleased about something they did.',
+      Excited:'Not quite. Excited usually looks more energetic. This person is very still.'
     }
   },
   {
@@ -47,11 +47,11 @@ const cases = [
     situation:'A student answers incorrectly in front of the class and looks down.',
     clues:{FACE:'Face is red.', BODY:'Shoulders pulled in.', WORDS:'“Can we move on?”', SITUATION:'The mistake was public.'},
     options:['Happy','Content','Embarrassed','Tired'], correct:'Embarrassed',
-    success:'Yes. Embarrassed fits best because their face is red, they are looking down, their shoulders are pulled in and they ask the class to move on. These clues together suggest they might feel embarrassed.',
+    success:'Yes. A red face, looking down and asking to move on suggest they might feel embarrassed.',
     feedback:{
-      Happy:'Not quite. The student is looking down, pulling their shoulders in and asking to move on. Those clues do not strongly suggest happy here.',
-      Content:'Not quite. Content usually means feeling comfortable or okay. Here, the student looks uncomfortable and wants the class to move on.',
-      Tired:'Not quite. We do not have clues such as low energy, closed eyes or needing rest. The public mistake and “Can we move on?” are more useful clues here.'
+      Happy:'Not quite. The clues do not show smiling, excitement or enjoyment.',
+      Content:'Not quite. They look uncomfortable and want the attention to move away.',
+      Tired:'Not quite. The clues are more about the mistake and being watched than low energy.'
     }
   },
   {
@@ -59,42 +59,42 @@ const cases = [
     situation:'A student is waiting to give a presentation in five minutes.',
     clues:{FACE:'Eyes down.', BODY:'Fidgeting. Fast breaths.', WORDS:'“I’m worried I’ll mess it up.”', SITUATION:'A presentation is next.'},
     options:['Bored','Proud','Calm','Nervous'], correct:'Nervous',
-    success:'Yes. Nervous fits best because the student is fidgeting, breathing quickly, looking down and saying they are worried they will mess up. The presentation starting soon is another clue. Together, these clues suggest they might be nervous.',
+    success:'Yes. Fidgeting, fast breathing and saying they are worried suggest they might be nervous.',
     feedback:{
-      Bored:'Not quite. Bored often looks low-energy or uninterested. This student is fidgeting, breathing quickly and saying they are worried.',
-      Proud:'Not quite. Proud would usually include clues that they feel pleased about something they have done. Here, their words tell us they are worried about what is about to happen.',
-      Calm:'Not quite. Fast breathing, fidgeting and saying “I’m worried” do not fit calm very well in this situation.'
+      Bored:'Not quite. They are worried about what is about to happen, not uninterested.',
+      Proud:'Not quite. They are talking about worry, not feeling pleased or confident.',
+      Calm:'Not quite. Fast breathing and fidgeting do not fit calm very well here.'
     }
   }
 ];
 
 const sorts = [
-  {id:'books', img:'assets/dropped-books.png', text:'A classmate drops their books and papers everywhere.', answer:'help', why:'Yes. The books are on the floor, so there is something useful you can help with. You can offer to pick them up.', feedback:{listen:'Not this one. The main problem is the books and papers on the floor. Offering help fits better here.', check:'Not this one. You can already see a clear problem you can help with. Offer to help pick the books up.'}},
-  {id:'dog', img:'assets/listen-friend.png', text:'A friend tells you their dog died last night.', answer:'listen', why:'Yes. Their dog died. You cannot fix that. Listening and staying with them may help if they want you there.', feedback:{help:'Not this one. You cannot fix their loss. Listening is a better first choice here.', check:'Not this one. They have told you what happened. Start by listening and being kind.'}},
-  {id:'lunch', img:'assets/alone-lunch.png', text:'A classmate is sitting alone at lunch. You do not know if they want company.', answer:'check', why:'Yes. You do not know if they want company or space. Ask first.', feedback:{help:'Not this one. You do not know if they want help or company yet. Ask first.', listen:'Not this one. They have not said they want to talk. Ask if they want company or space first.'}},
-  {id:'mistake', img:'assets/student-desk.png', text:'Someone looks upset after a mistake. You are not sure if they want to talk.', answer:'check', why:'Yes. You are not sure what they want. Ask if they want to talk or have some space.', feedback:{help:'Not this one. You do not know what kind of help they want yet. Ask first.', listen:'Not this one. They may want to talk, or they may want space. Ask first.'}}
+  {id:'books', img:'assets/dropped-books.png', text:'A classmate drops their books and papers everywhere.', answer:'help', why:'Yes. This is a clear problem you can help with.', feedback:{listen:'Not this one. They need practical help first.', check:'Not this one. You can simply offer to help.'}},
+  {id:'dog', img:'assets/listen-friend.png', text:'A friend tells you their dog died last night.', answer:'listen', why:'Yes. You cannot fix the loss. Listening may help.', feedback:{help:'Not this one. This is not a problem you can fix.', check:'Not this one. Start by listening and being kind.'}},
+  {id:'lunch', img:'assets/alone-lunch.png', text:'A classmate is sitting alone at lunch. You do not know if they want company.', answer:'check', why:'Yes. You do not know what they want, so ask first.', feedback:{help:'Not this one. You do not know what kind of help they want.', listen:'Not this one. They have not asked to talk yet. Check first.'}},
+  {id:'mistake', img:'assets/student-desk.png', text:'Someone looks upset after a mistake. You are not sure if they want to talk.', answer:'check', why:'Yes. You are not sure what they want, so ask first.', feedback:{help:'Not this one. You do not know what would help yet.', listen:'Not this one. They may want to talk, but check first.'}}
 ];
 
 const responses = [
-  {title:'DROPPED BOOKS', img:'assets/dropped-books.png', text:'Papers are all over the floor and the student is in a hurry.', need:'THEY MAY NEED HELP PICKING THINGS UP.', choices:[
-    ['“This is what happens when you carry too much.”',false,'That points out the mistake. It does not help with the papers.'],
-    ['“Do you want a hand picking those up?”',true,'Yes. You offer help, and they can still say yes or no.'],
-    ['Stand and watch.',false,'You can ask if they want help instead of only watching.']
+  {title:'DROPPED BOOKS', img:'assets/dropped-books.png', text:'Papers are all over the floor and the student is in a hurry.', need:'THEY MAY NEED HELP.', choices:[
+    ['“This is what happens when you carry too much.”',false,'Not quite. That points out the mistake instead of helping.'],
+    ['“Do you want a hand picking those up?”',true,'Yes. It offers help without taking over.'],
+    ['Stand and watch.',false,'Not quite. You can offer help first.']
   ]},
-  {title:'A FRIEND’S DOG DIED', img:'assets/listen-friend.png', text:'Your friend is speaking quietly and looks sad.', need:'THEY MAY NEED YOU TO LISTEN OR STAY WITH THEM.', choices:[
-    ['“I can find you another dog.”',false,'A new dog does not fix their loss. Listening is more helpful here.'],
-    ['“At least you had a dog.”',false,'That can make their feelings seem unimportant.'],
-    ['“I’m sorry. Do you want me to stay with you?”',true,'Yes. It shows you care and asks what they want.']
+  {title:'A FRIEND’S DOG DIED', img:'assets/listen-friend.png', text:'Your friend is speaking quietly and looks sad.', need:'THEY MAY NEED YOU TO LISTEN.', choices:[
+    ['“I can find you another dog.”',false,'Not quite. A new dog does not fix the loss.'],
+    ['“At least you had a dog.”',false,'Not quite. That can make the person feel dismissed.'],
+    ['“I’m sorry. Do you want me to stay with you?”',true,'Yes. It is kind and gives them a choice.']
   ]},
-  {title:'BEFORE A PRESENTATION', img:'assets/nervous-door.png', text:'A student is fidgeting and says they are worried about presenting.', need:'THEY MAY WANT SUPPORT BEFORE THEY PRESENT.', choices:[
-    ['“Stop worrying.”',false,'They cannot just switch the feeling off. Try a response that offers support.'],
-    ['“That sounds stressful. Want me to stay for a minute?”',true,'Yes. You notice the feeling and offer support.'],
-    ['“Most presentations are fine, so your worry makes no sense.”',false,'Facts do not make the worried feeling disappear.']
+  {title:'BEFORE A PRESENTATION', img:'assets/nervous-door.png', text:'A student is fidgeting and says they are worried about presenting.', need:'THEY MAY WANT SUPPORT.', choices:[
+    ['“Stop worrying.”',false,'Not quite. People cannot always switch a feeling off.'],
+    ['“That sounds stressful. Want me to stay for a minute?”',true,'Yes. It notices the feeling and offers support.'],
+    ['“Most presentations are fine, so your worry makes no sense.”',false,'Not quite. That does not really respond to how they feel.']
   ]},
-  {title:'ALONE AT LUNCH', img:'assets/alone-lunch.png', text:'A classmate is sitting alone and looking down.', need:'YOU DO NOT KNOW IF THEY WANT COMPANY OR SPACE.', choices:[
-    ['Sit down and start asking lots of questions.',false,'They may want space. Ask before sitting down.'],
-    ['Walk past because they did not ask.',false,'You can check gently without taking over.'],
-    ['“Do you want some company?”',true,'Yes. You ask what they want instead of deciding for them.']
+  {title:'ALONE AT LUNCH', img:'assets/alone-lunch.png', text:'A classmate is sitting alone and looking down.', need:'ASK WHAT THEY WANT.', choices:[
+    ['Sit down and start asking lots of questions.',false,'Not quite. Ask before taking over.'],
+    ['Walk past because they did not ask.',false,'Not quite. You can check gently.'],
+    ['“Do you want some company?”',true,'Yes. It checks what they want.']
   ]}
 ];
 
@@ -229,9 +229,14 @@ const views = {
 
 $('#backBtn').addEventListener('click',()=>{stopSpeech();if(state.history.length>1){state.history.pop();const prev=state.history.at(-1);render(prev,{push:false});}});
 $('#forwardBtn').addEventListener('click',()=>{});
-$('#teacherBtn').onclick=()=>{stopSpeech();$('#teacherModal').classList.remove('hidden');$('#closeTeacherBtn').focus();};
+$('#teacherBtn').onclick=()=>{stopSpeech();$('#teacherModal').classList.remove('hidden');setTeacherTab('about');$('#closeTeacherBtn').focus();};
+function setTeacherTab(name){
+  $$('.teacher-tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  $$('.teacher-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===name));
+}
+$$('.teacher-tab').forEach(b=>b.onclick=()=>setTeacherTab(b.dataset.tab));
 function closeTeacher(){$('#teacherModal').classList.add('hidden');$('#teacherBtn').focus();}
-$('#closeTeacherBtn').onclick=closeTeacher; $('#closeTeacherBottom').onclick=closeTeacher; $('#teacherModal').addEventListener('click',e=>{if(e.target===$('#teacherModal'))closeTeacher();});
+$('#closeTeacherBtn').onclick=closeTeacher; $('#teacherModal').addEventListener('click',e=>{if(e.target===$('#teacherModal'))closeTeacher();});
 $('#helpBtn').onclick=()=>{stopSpeech();$('#helpModal').classList.remove('hidden');$('#closeHelpBtn').focus();};
 function closeHelp(){$('#helpModal').classList.add('hidden');$('#helpBtn').focus();}
 $('#closeHelpBtn').onclick=closeHelp; $('#helpModal').addEventListener('click',e=>{if(e.target===$('#helpModal'))closeHelp();});
