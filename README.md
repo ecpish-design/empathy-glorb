@@ -1,23 +1,31 @@
-# GLORB & THE EMPATHY MISSION — UX/UI rebuild
+# empathy-school-glorb
 
-Files:
+GLORB // EMPATHY MISSION
+UX/UI clarity + teaching-feedback revision
+
+## Files
 - index.html
 - style.css
 - script.js
 - assets/
 
-## Main revision decisions
-- Persistent BACK, TEACHER INFO and READ/STOP controls.
-- Shorter Year 5–6 language and no em dashes in learner-facing copy.
-- One-screen viewport design for desktop, iPad and phone, with responsive compact layouts.
-- All artwork sits on white/light panels instead of directly on the dark interface.
-- Teaching remains NOTICE → GUESS → CHECK → RESPOND.
-- Mission 2 is now a four-situation, one-card-at-a-time sort rather than six cards shown at once.
-- Mission 1 and Mission 3 answers are deliberately mixed so correct answers are not consistently first.
-- Incorrect choices become grey and disabled after they are tried.
-- Certificate is landscape, contained inside its borders, and frames the learner as Glorb's Earth Helper.
-- Certificate does not state that a learning intention was met.
-- Teacher information is available from the top navigation without interrupting the learner flow.
+## This revision includes
+- A short “Meet Glorb” orientation before the incoming transmission
+- Teacher information with curriculum, evidence, accessibility rationale, limits and references
+- Read control that changes to Stop while speaking
+- Back navigation across student screens
+- Larger Mission 1 case illustrations
+- Explicit correct and incorrect clue-based teaching feedback for every Mission 1 answer
+- Mixed correct-answer positions
+- Wrong answers grey out and cannot be selected again
+- Mission progress, opened clues, attempted answers and correct responses preserved in sessionStorage
+- Returning to a completed mission shows the saved completed work rather than resetting it
+- One-situation-at-a-time Mission 2
+- Certificate framed around the learner helping Glorb, without claiming the learning intention was “met”
+- Responsive desktop, iPad and phone layouts
 
 ## Run
-Open index.html in a browser, or upload the folder contents to the GitHub Pages repository root.
+Open index.html in a modern browser, or upload the folder contents to the repository root and enable GitHub Pages.
+
+## Privacy
+The learner name and mission progress are kept only in the current browser session using sessionStorage. There is no student account or backend.
