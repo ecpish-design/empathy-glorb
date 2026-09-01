@@ -8,7 +8,7 @@ const defaultProgress = () => ({
   case: 0, sort: 0, response: 0,
   caseData: [0,1,2].map(() => ({opened: [], wrong: [], correct: false})),
   sortData: [0,1,2,3].map(() => ({wrong: [], correct: false})),
-  responseData: [0,1,2,3].map(() => ({wrong: [], correct: false})),
+  responseData: [0,1,2].map(() => ({wrong: [], correct: false})),
   history: [], speech: false
 });
 
@@ -75,12 +75,9 @@ const sorts = [
   {id:'mistake', img:'assets/student-desk.png', text:'Someone looks upset after a mistake. You are not sure if they want to talk.', answer:'check', why:'Yes. You are not sure what they want, so ask first.', feedback:{help:'Not this one. You do not know what would help yet.', listen:'Not this one. They may want to talk, but check first.'}}
 ];
 
+// Dropped books stays in Mission 2 only. It is a clear HELP example there,
+// so it has been removed from Mission 3 to avoid contradictory teaching.
 const responses = [
-  {title:'DROPPED BOOKS', img:'assets/dropped-books.png', text:'Papers are all over the floor and the student is in a hurry.', need:'THEY MAY NEED HELP.', choices:[
-    ['“This is what happens when you carry too much.”',false,'Not quite. That points out the mistake instead of helping.'],
-    ['“Do you want a hand picking those up?”',true,'Yes. It offers help without taking over.'],
-    ['Stand and watch.',false,'Not quite. You can offer help first.']
-  ]},
   {title:'A FRIEND’S DOG DIED', img:'assets/listen-friend.png', text:'Your friend is speaking quietly and looks sad.', need:'THEY MAY NEED YOU TO LISTEN.', choices:[
     ['“I can find you another dog.”',false,'Not quite. A new dog does not fix the loss.'],
     ['“At least you had a dog.”',false,'Not quite. That can make the person feel dismissed.'],
@@ -101,6 +98,41 @@ const responses = [
 function esc(s){return String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c));}
 function person(s){return String(s).replaceAll('{{name}}', state.name || 'Earth Helper');}
 function setStage(t){$('#stageLabel').textContent=t;}
+
+function progressFor(view){
+  const completedMissions = state.completed.filter(Boolean).length;
+  const completedCases = state.caseData.filter(x=>x.correct).length;
+  const completedSorts = state.sortData.filter(x=>x.correct).length;
+  const completedResponses = state.responseData.filter(x=>x.correct).length;
+
+  switch(view){
+    case 'cover': return 0;
+    case 'boot': return 4;
+    case 'story': return 5 + ((state.story + 1) / story.length) * 13;
+    case 'briefing': return 22;
+    case 'learn': return 25 + ((state.teach + 1) / teach.length) * 15;
+    case 'hub':
+      if(completedMissions === 0) return 42;
+      if(completedMissions === 1) return 62;
+      if(completedMissions === 2) return 80;
+      return 97;
+    case 'detective': return 42 + (completedCases / cases.length) * 20;
+    case 'sort': return 62 + (completedSorts / sorts.length) * 18;
+    case 'respond': return 80 + (completedResponses / responses.length) * 17;
+    case 'complete':
+    case 'certificate': return 100;
+    default: return 0;
+  }
+}
+function updateProgress(view){
+  const fill = $('#progressFill');
+  const bar = $('#missionProgress');
+  if(!fill || !bar) return;
+  const value = Math.max(0, Math.min(100, progressFor(view)));
+  fill.style.width = `${value}%`;
+  bar.setAttribute('aria-valuenow', String(Math.round(value)));
+}
+
 function saveState(){
   try{
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -118,7 +150,19 @@ function loadState(){
       state.history=[]; state.speech=false;
       state.caseData=Array.isArray(saved.caseData)?saved.caseData:defaultProgress().caseData;
       state.sortData=Array.isArray(saved.sortData)?saved.sortData:defaultProgress().sortData;
-      state.responseData=Array.isArray(saved.responseData)?saved.responseData:defaultProgress().responseData;
+
+      // Migrate old 4-response sessions: old index 0 was dropped books.
+      if(Array.isArray(saved.responseData)){
+        state.responseData = saved.responseData.length === 4
+          ? saved.responseData.slice(1,4)
+          : saved.responseData.slice(0,3);
+      } else {
+        state.responseData = defaultProgress().responseData;
+      }
+      while(state.responseData.length < 3){
+        state.responseData.push({wrong: [], correct: false});
+      }
+      state.response = Math.max(0, Math.min(Number(saved.response)||0, responses.length-1));
     }
   }catch{}
 }
@@ -140,10 +184,17 @@ function render(view,{push=true}={}){
   saveState();
   window.scrollTo(0,0);
   views[view]();
+  updateProgress(view);
   requestAnimationFrame(()=>{const h=$('h1,h2',app);if(h){h.tabIndex=-1;h.focus({preventScroll:true});}});
 }
 
 const views = {
+
+cover(){
+  setStage('START');
+  app.innerHTML=`<section class="screen"><div class="shell cover-shell"><div class="cover-frame"><div class="cover-inner"><div class="cover-art"><img src="assets/cover.png" alt="Glorb"></div><div class="cover-copy"><p class="eyebrow cover-kicker">INCOMING TRANSMISSION</p><h1 class="cover-title">GLORB & THE<br>EMPATHY<br>MISSION</h1><div class="cover-signal" aria-hidden="true"><span class="cover-signal-label">SIGNAL</span><div class="cover-signal-bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="cover-signal-value">100%</span></div><p class="cover-status">Transmission decoded.</p><button id="openTransmission" class="button primary cover-button">OPEN TRANSMISSION</button></div></div></div></div></section>`;
+  $('#openTransmission').onclick=()=>render('boot');
+},
   boot(){
     setStage('START');
     app.innerHTML=`<section class="screen"><div class="shell split"><div class="visual-panel"><img src="assets/glorb.png" alt="Glorb"></div><article class="paper-panel"><div class="boot-copy"><p class="eyebrow">MEET GLORB</p><p class="orientation">Glorb is an alien learning how people on Earth understand each other.</p><p class="eyebrow">INCOMING TRANSMISSION</p><h1>GLORB & THE<br>EMPATHY MISSION</h1><p class="lead"><b>Glorb needs your help.</b> He can listen, but he still guesses feelings too quickly and tries to fix everything.</p><div class="boot-rule" aria-label="Empathy mission steps"><div><b>NOTICE</b></div><div><b>GUESS</b></div><div><b>CHECK</b></div><div><b>RESPOND</b></div></div><label class="eyebrow" for="playerName">EARTH HELPER // YOUR NAME</label><div class="name-row"><input id="playerName" maxlength="24" autocomplete="name" placeholder="Your name" value="${esc(state.name)}"><button id="start" class="button primary" ${state.name?'':'disabled'}>BEGIN</button></div><p class="fine">Your name is only used during this browser session and on your mission certificate.</p></div></article></div></section>`;
@@ -252,4 +303,4 @@ $('#readBtn').onclick=()=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#teacherModal').classList.contains('hidden'))closeTeacher();else if(!$('#helpModal').classList.contains('hidden'))closeHelp();else stopSpeech();}});
 
 loadState();
-render('boot');
+render('cover');
