@@ -2,22 +2,27 @@
 
 Interactive Year 5–6 empathy lesson in the GLORB Social Skills Framework.
 
-## Current UX revision
-- Conversation Mission-style top control bar with Back, Read aloud, Help and More information.
-- Simpler student language across the empathy teaching sequence.
-- Larger Mission 1 case illustrations so visual clues are easier to see.
-- Specific teaching feedback for every Mission 1 correct and incorrect feeling choice.
-- Correct feedback names the face, body, words and situation clues and keeps the language of "might".
-- Completed and in-progress mission answers are stored in sessionStorage so Back does not reset the work.
-- Mission 2 uses short, plain-language HELP / LISTEN / CHECK choices.
-- Teacher information includes curriculum, evidence base, instructional rationale and limitations.
-- Read aloud changes to Stop while speaking.
-- Certificate frames the student as Glorb's Earth Helper and does not claim mastery.
-
-## Files
+## Included in this pack
 - `index.html`
 - `style.css`
 - `script.js`
-- `assets/`
+- `README.md`
+- `assets/cover.png`
 
-Upload the folder contents to the GitHub Pages repository root.
+## What changed in this version
+- Added a full-screen transmission cover before the lesson begins.
+- The new cover uses `assets/cover.png`.
+- Kept the Conversation Mission-style top control bar.
+- Kept the persistent mission progress bar.
+- Kept the simplified empathy teaching language.
+- Kept the larger Mission 1 illustrations and specific clue feedback.
+- Kept sessionStorage progress so Back does not reset completed work.
+- Kept the cleaned More information section.
+- Kept DROPPED BOOKS in Mission 2 only and removed it from Mission 3.
+- Kept the 3-scenario RESPOND activity.
+- Kept the certificate wording focused on helping Glorb rather than claiming mastery.
+
+## Important
+This pack includes only the new cover asset.
+The rest of the lesson still points to your existing artwork inside the `assets/` folder,
+so upload this into the branch that already has the full Empathy Mission asset set.
