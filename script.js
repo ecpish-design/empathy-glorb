@@ -171,6 +171,7 @@ function stopSpeech(){
   state.speech=false;
   $('#readBtn').classList.remove('speaking');
   $('#readBtn').setAttribute('aria-pressed','false');
+  $('#readBtn').setAttribute('aria-label','Read aloud');
   $('#readLabel').textContent='Read aloud';
 }
 function updateNavControls(){
@@ -197,7 +198,7 @@ cover(){
 },
   boot(){
     setStage('START');
-    app.innerHTML=`<section class="screen"><div class="shell split"><div class="visual-panel"><img src="assets/glorb.png" alt="Glorb"></div><article class="paper-panel"><div class="boot-copy"><p class="eyebrow">MEET GLORB</p><p class="orientation">Glorb is an alien learning how people on Earth understand each other.</p><p class="eyebrow">INCOMING TRANSMISSION</p><h1>GLORB & THE<br>EMPATHY MISSION</h1><p class="lead"><b>Glorb needs your help.</b> He can listen, but he still guesses feelings too quickly and tries to fix everything.</p><div class="boot-rule" aria-label="Empathy mission steps"><div><b>NOTICE</b></div><div><b>GUESS</b></div><div><b>CHECK</b></div><div><b>RESPOND</b></div></div><label class="eyebrow" for="playerName">EARTH HELPER // YOUR NAME</label><div class="name-row"><input id="playerName" maxlength="24" autocomplete="name" placeholder="Your name" value="${esc(state.name)}"><button id="start" class="button primary" ${state.name?'':'disabled'}>BEGIN</button></div><p class="fine">Your name is only used during this browser session and on your mission certificate.</p></div></article></div></section>`;
+    app.innerHTML=`<section class="screen"><div class="shell split boot-shell"><div class="visual-panel"><img src="assets/glorb.png" alt="Glorb"></div><article class="paper-panel"><div class="boot-copy"><p class="eyebrow">MEET GLORB</p><p class="orientation">Glorb is an alien learning how people on Earth understand each other.</p><p class="eyebrow">INCOMING TRANSMISSION</p><h1>GLORB & THE<br>EMPATHY MISSION</h1><p class="lead"><b>Glorb needs your help.</b> He can listen, but he still guesses feelings too quickly and tries to fix everything.</p><div class="boot-rule" aria-label="Empathy mission steps"><div><b>NOTICE</b></div><div><b>GUESS</b></div><div><b>CHECK</b></div><div><b>RESPOND</b></div></div><label class="eyebrow" for="playerName">EARTH HELPER // YOUR NAME</label><div class="name-row"><input id="playerName" maxlength="24" autocomplete="name" placeholder="Your name" value="${esc(state.name)}"><button id="start" class="button primary" ${state.name?'':'disabled'}>BEGIN</button></div><p class="fine">Your name is only used during this browser session and on your mission certificate.</p></div></article></div></section>`;
     const input=$('#playerName'), btn=$('#start');
     input.addEventListener('input',()=>{state.name=input.value.replace(/[^\p{L}\p{M}'’ .-]/gu,'').replace(/\s+/g,' ').trim().slice(0,24);btn.disabled=!state.name;saveState();});
     input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!btn.disabled)btn.click();});
@@ -205,12 +206,12 @@ cover(){
   },
   story(){
     setStage('STORY'); const s=story[state.story];
-    app.innerHTML=`<section class="screen"><div class="shell split"><div class="visual-panel"><img src="${s.img}" alt="Story illustration"></div><article class="paper-panel"><p class="eyebrow">GLORB // FIELD MESSAGE</p><h2>${s.title}</h2><div class="story-copy">${person(s.text)}</div><div class="story-nav"><span class="count">${state.story+1} / ${story.length}</span><button id="next" class="button ink">${state.story===story.length-1?'MISSION BRIEFING':'CONTINUE'}</button></div></article></div></section>`;
+    app.innerHTML=`<section class="screen"><div class="shell split story-shell"><div class="visual-panel"><img src="${s.img}" alt="Story illustration"></div><article class="paper-panel"><p class="eyebrow">GLORB // FIELD MESSAGE</p><h2>${s.title}</h2><div class="story-copy">${person(s.text)}</div><div class="story-nav"><span class="count">${state.story+1} / ${story.length}</span><button id="next" class="button ink">${state.story===story.length-1?'MISSION BRIEFING':'CONTINUE'}</button></div></article></div></section>`;
     $('#next').onclick=()=>{if(state.story<story.length-1){state.story++;saveState();render('story');}else render('briefing');};
   },
   briefing(){
     setStage('BRIEFING');
-    app.innerHTML=`<section class="screen"><div class="shell split"><div class="visual-panel"><img src="assets/two-students.png" alt="Two students talking"></div><article class="paper-panel compact"><p class="eyebrow">YOUR JOB</p><h2>HELP GLORB UNDERSTAND EMPATHY.</h2><p class="lead">Empathy means trying to understand another person and responding with care. You do not have to know exactly how they feel.</p><div class="briefing-list"><div><span>1</span><p><b>NOTICE</b><small>Look for more than one clue.</small></p></div><div><span>2</span><p><b>GUESS</b><small>Think about what they might feel.</small></p></div><div><span>3</span><p><b>CHECK</b><small>Ask what would help.</small></p></div><div><span>4</span><p><b>RESPOND</b><small>Choose kind words or help.</small></p></div></div><div class="intention"><b>WE ARE LEARNING TO:</b> notice clues, make a careful guess, check what someone needs and respond kindly.</div><button id="learn" class="button ink">LEARN THE RULE</button></article></div></section>`;
+    app.innerHTML=`<section class="screen"><div class="shell split briefing-shell"><div class="visual-panel"><img src="assets/two-students.png" alt="Two students talking"></div><article class="paper-panel compact"><p class="eyebrow">YOUR JOB</p><h2>HELP GLORB UNDERSTAND EMPATHY.</h2><p class="lead">Empathy means trying to understand another person and responding with care. You do not have to know exactly how they feel.</p><div class="briefing-list"><div><span>1</span><p><b>NOTICE</b><small>Look for more than one clue.</small></p></div><div><span>2</span><p><b>GUESS</b><small>Think about what they might feel.</small></p></div><div><span>3</span><p><b>CHECK</b><small>Ask what would help.</small></p></div><div><span>4</span><p><b>RESPOND</b><small>Choose kind words or help.</small></p></div></div><div class="intention"><b>WE ARE LEARNING TO:</b> notice clues, make a careful guess, check what someone needs and respond kindly.</div><button id="learn" class="button ink">LEARN THE RULE</button></article></div></section>`;
     $('#learn').onclick=()=>{state.teach=0;saveState();render('learn');};
   },
   learn(){
@@ -298,7 +299,7 @@ $('#readBtn').onclick=()=>{
   const clone=active.cloneNode(true); $$('button,.hidden,img',clone).forEach(n=>n.remove());
   const text=clone.textContent.replace(/\s+/g,' ').replace(/→/g,' then ').trim();
   const u=new SpeechSynthesisUtterance(text); u.rate=.92; u.lang='en-AU'; u.onend=stopSpeech; u.onerror=stopSpeech;
-  state.speech=true; $('#readBtn').classList.add('speaking'); $('#readBtn').setAttribute('aria-pressed','true'); $('#readLabel').textContent='Stop'; speechSynthesis.speak(u);
+  state.speech=true; $('#readBtn').classList.add('speaking'); $('#readBtn').setAttribute('aria-pressed','true'); $('#readBtn').setAttribute('aria-label','Stop read aloud'); $('#readLabel').textContent='Stop'; speechSynthesis.speak(u);
 };
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#teacherModal').classList.contains('hidden'))closeTeacher();else if(!$('#helpModal').classList.contains('hidden'))closeHelp();else stopSpeech();}});
 

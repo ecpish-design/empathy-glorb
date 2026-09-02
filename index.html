@@ -14,13 +14,13 @@
   <header class="topbar" aria-label="Mission controls">
     <div class="brand">GLORB <span>//</span> EMPATHY MISSION</div>
     <div class="top-actions">
-      <button id="backBtn" class="top-control nav-control" type="button" aria-label="Go back one screen">← Back</button>
-      <button id="forwardBtn" class="top-control nav-control" type="button" aria-label="Go forward one screen" disabled>→ Forward</button>
-      <button id="readBtn" class="top-control read-control" type="button" aria-pressed="false">
+      <button id="backBtn" class="top-control nav-control" type="button" aria-label="Go back one screen"><span aria-hidden="true">←</span><span class="nav-word">Back</span></button>
+      <button id="forwardBtn" class="top-control nav-control" type="button" aria-label="Go forward one screen" disabled><span aria-hidden="true">→</span><span class="nav-word">Forward</span></button>
+      <button id="readBtn" class="top-control read-control" type="button" aria-pressed="false" aria-label="Read aloud">
         <span class="sound-icon" aria-hidden="true">🔊</span><span id="readLabel">Read aloud</span>
       </button>
       <button id="helpBtn" class="top-control" type="button">? Help</button>
-      <button id="teacherBtn" class="top-control" type="button">ⓘ More information</button>
+      <button id="teacherBtn" class="top-control" type="button" aria-label="More information"><span aria-hidden="true">ⓘ</span> <span class="teacher-full">More information</span><span class="teacher-short">Info</span></button>
       <span id="stageLabel" class="stage-label">START</span>
     </div>
   </header>

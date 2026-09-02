@@ -26,3 +26,13 @@ Interactive Year 5–6 empathy lesson in the GLORB Social Skills Framework.
 This pack includes only the new cover asset.
 The rest of the lesson still points to your existing artwork inside the `assets/` folder,
 so upload this into the branch that already has the full Empathy Mission asset set.
+
+## Phone responsive revision
+- Desktop and iPad layouts are unchanged.
+- Read Aloud becomes speaker-only on phones while retaining an accessible label.
+- Forward is hidden on phones because it is disabled in this build.
+- Back becomes an arrow-only control on phones.
+- More information shortens to Info on phones.
+- Mobile split screens now use explicit image/content rows, removing the large blank navy gap.
+- The mobile cover has a larger Glorb and tighter content spacing.
+- Phone typography and controls are reduced selectively so core screens fit more cleanly.
