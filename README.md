@@ -41,3 +41,9 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - Glorb is visually cropped/scaled on phones so the transparent canvas does not make him appear tiny.
 - Glorb is positioned directly beneath the transmission controls instead of at the bottom of the viewport.
 - iPad and desktop cover rules are unchanged.
+
+## Latest phone alignment fix
+- Centred the entire transmission content column on phone.
+- Title, signal, status and OPEN TRANSMISSION now share the same horizontal boundaries.
+- Removed the mobile right-alignment rule from the orange button.
+- Desktop and iPad layouts are unchanged.
