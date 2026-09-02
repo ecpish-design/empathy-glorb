@@ -47,3 +47,9 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - Title, signal, status and OPEN TRANSMISSION now share the same horizontal boundaries.
 - Removed the mobile right-alignment rule from the orange button.
 - Desktop and iPad layouts are unchanged.
+
+
+## Latest mobile cover update
+- On phones only, the cover artwork now sits above the title/content instead of low on the page.
+- The cover image is visually cropped/scaled so Glorb appears larger without changing the asset file.
+- The text block stays left-aligned underneath, matching the stacked mobile mock-up.
