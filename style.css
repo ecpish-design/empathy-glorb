@@ -744,3 +744,99 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
     margin:0;
   }
 }
+
+
+/* 2026-09-02 COVER SCALE PASS — phone layout intentionally untouched. */
+@media (min-width:1101px){
+  .cover-frame{padding:18px 24px}
+  .cover-inner{
+    display:grid;
+    grid-template-columns:minmax(300px,35%) minmax(0,65%);
+    align-items:center;
+    gap:clamp(28px,3vw,46px);
+    padding:clamp(28px,3vw,44px);
+  }
+  .cover-art{
+    position:relative;
+    left:auto;top:auto;bottom:auto;
+    width:100%;max-width:470px;height:auto;
+    transform:none;
+    justify-self:center;
+    align-self:end;
+  }
+  .cover-art img{
+    width:100%;height:auto;max-height:520px;object-fit:contain;
+  }
+  .cover-copy{
+    width:100%;max-width:none;margin:0;padding:0 clamp(10px,2vw,30px) 0 0;
+  }
+  .cover-kicker{
+    text-align:left;margin:0 0 12px;
+    font-size:clamp(.75rem,.9vw,.9rem);
+  }
+  .cover-title{
+    text-align:left;
+    font-size:clamp(5rem,7.6vw,7.8rem);
+    line-height:.91;
+    margin:0 0 22px;
+    letter-spacing:-.058em;
+  }
+  .cover-signal{
+    width:100%;max-width:none;margin:0 0 16px;
+    gap:clamp(10px,1vw,15px);
+  }
+  .cover-signal-label,.cover-signal-value{font-size:clamp(.72rem,.78vw,.82rem)}
+  .cover-signal-bar{gap:3px}
+  .cover-signal-bar i{height:11px}
+  .cover-status{
+    text-align:left;font-size:clamp(1rem,1.2vw,1.22rem);margin:0 0 18px;
+  }
+  .cover-button{
+    width:min(380px,62%);min-width:300px;margin:0;
+    min-height:50px;
+  }
+}
+
+@media (min-width:601px) and (max-width:1100px){
+  .cover-frame{padding:12px}
+  .cover-inner{
+    display:grid;
+    grid-template-columns:minmax(190px,33%) minmax(0,67%);
+    align-items:center;
+    gap:clamp(16px,2.5vw,28px);
+    padding:clamp(18px,2.8vw,30px);
+  }
+  .cover-inner::before{inset:14px}
+  .cover-art{
+    position:relative;
+    left:auto;top:auto;bottom:auto;
+    width:100%;max-width:350px;height:auto;
+    transform:none;
+    justify-self:center;
+    align-self:end;
+  }
+  .cover-art img{
+    width:100%;height:auto;max-height:390px;object-fit:contain;
+  }
+  .cover-copy{
+    width:100%;max-width:none;margin:0;padding:0 6px 0 0;
+  }
+  .cover-kicker{
+    text-align:left;margin:0 0 9px;font-size:clamp(.64rem,.9vw,.76rem);
+  }
+  .cover-title{
+    text-align:left;
+    font-size:clamp(3.8rem,8.2vw,5.8rem);
+    line-height:.91;
+    letter-spacing:-.055em;
+    margin:0 0 15px;
+  }
+  .cover-signal{width:100%;max-width:none;margin:0 0 12px;gap:8px}
+  .cover-signal-label,.cover-signal-value{font-size:clamp(.6rem,.78vw,.72rem)}
+  .cover-signal-bar{gap:2px}
+  .cover-signal-bar i{height:9px}
+  .cover-status{text-align:left;font-size:clamp(.86rem,1.25vw,1rem);margin:0 0 13px}
+  .cover-button{
+    width:min(330px,70%);min-width:235px;margin:0;min-height:46px;
+  }
+}
