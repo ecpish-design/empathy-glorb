@@ -58,52 +58,7 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
   .sort-options{gap:5px}.sort-option{padding:8px 5px}.response-card{padding:14px}.certificate{grid-template-columns:135px 1fr;gap:15px;padding:28px}.certificate-actions .button{min-height:34px;padding:7px 9px;font-size:.56rem}.teacher-grid{grid-template-columns:1fr}
 }
 
-@media(max-width:600px){
-  .topbar{height:50px;padding:0 8px}.brand{display:none}.top-actions{width:100%;justify-content:center;gap:6px}
-  .top-control{min-height:34px;height:34px;padding:5px 10px;font-size:.62rem;line-height:1;border-radius:999px}
-  #forwardBtn{display:none}
-  #backBtn{width:38px;padding:0;display:grid;place-items:center;font-size:.92rem}#backBtn .nav-word{display:none}
-  #readBtn{width:40px;padding:0;display:grid;place-items:center}#readBtn #readLabel{display:none}#readBtn .sound-icon{font-size:1rem}
-  #helpBtn{padding-inline:10px}#teacherBtn{padding-inline:10px}.teacher-full{display:none}.teacher-short{display:inline}
-  .mission-progress{top:50px;height:4px}
-  #app{inset:54px 0 0 0;padding:6px}.screen{width:100%;height:100%}
 
-  .split,.learn-card,.case-board,.sort-layout,.response-layout,.complete-shell{grid-template-columns:1fr}
-  .split{grid-template-rows:27% 73%}.boot-shell{grid-template-rows:20% 80%}.story-shell{grid-template-rows:27% 73%}.briefing-shell{grid-template-rows:22% 78%}.complete-shell{grid-template-rows:22% 78%}
-  .split>.visual-panel,.split>.paper-panel{height:100%;min-height:0}
-  .visual-panel{border-right:0;border-bottom:1px solid rgba(16,39,67,.1);padding:6px}.visual-panel img{max-height:94%;max-width:88%}
-  .paper-panel{padding:13px;overflow:hidden}.paper-panel.compact{padding:11px 12px}.paper-panel h1{font-size:2rem}.paper-panel h2{font-size:1.48rem}.lead{font-size:.81rem;line-height:1.38}
-
-  .cover-frame{padding:8px}.cover-inner{display:flex;flex-direction:column;justify-content:center;padding:12px 12px 14px}.cover-inner::before{inset:9px}
-  .cover-copy{position:relative;z-index:2;width:100%;max-width:none;padding:0;margin:0}
-  .cover-kicker{text-align:left;margin-bottom:8px;font-size:.61rem}
-  .cover-title{width:100%;max-width:none;font-size:clamp(2.1rem,11vw,3rem);line-height:.93;margin:0 0 12px;text-align:left}
-  .cover-art{position:relative;left:auto;top:auto;bottom:auto;width:46vw;max-width:180px;margin:0 0 18px 2px;z-index:1;overflow:hidden}.cover-art img{width:185%;max-width:none;height:auto;transform:translateX(-22%);transform-origin:left top}
-  .cover-signal{width:100%;grid-template-columns:auto 1fr auto;gap:7px;margin:0 0 12px;max-width:none}
-  .cover-signal-label,.cover-signal-value{font-size:.58rem}.cover-signal-bar{grid-template-columns:repeat(20,1fr);gap:2px}.cover-signal-bar i:nth-child(n+21){display:none}.cover-signal-bar i{height:8px}
-  .cover-status{width:100%;font-size:.77rem;margin:0 0 10px}
-  .cover-button{display:block;width:100%;min-width:0;padding:9px 10px;margin:0}
-
-  .boot-rule{margin:7px 0;gap:4px}.boot-rule div{padding:6px 3px}.boot-rule b{font-size:.52rem}.orientation{font-size:.72rem;line-height:1.3;margin-bottom:7px}.name-row{margin-top:7px}.name-row input{padding:8px}.fine{font-size:.62rem;margin-top:5px}.button{min-height:36px;padding:8px 10px;font-size:.59rem}
-  .story-copy{font-size:.73rem;line-height:1.34}.story-nav{margin-top:auto}.count{font-size:.58rem}
-  .briefing-list{gap:3px;margin:5px 0}.briefing-list div{padding:5px 7px}.briefing-list span{width:22px;height:22px;font-size:.57rem}.briefing-list b{font-size:.72rem}.briefing-list small{font-size:.61rem}.intention{font-size:.67rem;margin:5px 0 7px;padding:6px 8px}
-
-  .learn-shell{padding:8px;gap:6px}.mini-head h2{font-size:1.18rem}.learn-card{grid-template-rows:25% 75%}.learn-visual{height:100%;padding:5px;border-bottom:1px solid rgba(16,39,67,.1)}.learn-copy{padding:10px}.learn-copy h2{font-size:1.28rem}.remember{padding:7px;font-size:.67rem;margin-top:7px}.glorb-note{font-size:.6rem;margin-top:6px}.learn-footer{min-height:34px}
-
-  .hub-shell{padding:8px;gap:6px}.hub-shell h2{font-size:1.16rem}.helper-strip{padding:5px 7px;grid-template-columns:46px 1fr;gap:7px}.helper-strip img{width:42px;height:42px}.helper-strip p{font-size:.62rem;line-height:1.26}.mission-grid{grid-template-columns:1fr;gap:4px}.mission-card{min-height:0;padding:6px 8px;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:6px}.mission-card .num{grid-column:1;font-size:.5rem}.mission-card>div{grid-column:2}.mission-card strong{margin:0 0 2px;font-size:.76rem}.mission-card p{font-size:.61rem;line-height:1.2}.mission-card em{grid-column:3;margin:0;font-size:.48rem;white-space:nowrap}
-
-  .activity-shell{padding:7px;gap:5px}.activity-head h2{font-size:1.12rem}.activity-sub{font-size:.61rem;line-height:1.2}.step-count{font-size:.55rem}
-  .case-board{grid-template-rows:51% 49%}.case-card{grid-template-columns:108px 1fr;height:100%;padding:7px;gap:7px}.case-image{width:100%;height:138px}.case-text{font-size:.67rem}.clue-grid{margin-top:4px;gap:3px}.clue{min-height:34px;padding:4px}.clue b{font-size:.47rem}.clue small{font-size:.53rem}.answer-card{padding:8px}.answer-card h3{font-size:.84rem;margin-bottom:4px}.choices{gap:3px}.choice{padding:6px;font-size:.62rem}.feedback{margin-top:3px;min-height:27px;font-size:.55rem;padding:5px}.activity-foot{min-height:32px}.small-status{font-size:.47rem}
-  .sort-layout{grid-template-rows:27% 73%}.sort-visual,.response-visual{height:100%;padding:5px;border-bottom:1px solid rgba(16,39,67,.1)}.sort-card-main{padding:9px}.sort-situation{font-size:.86rem;margin-bottom:6px}.sort-options{grid-template-columns:repeat(3,1fr);gap:3px}.sort-option{padding:5px 2px}.sort-option b{font-size:.49rem}.sort-option small{font-size:.48rem}.sort-progress{margin-top:5px;gap:3px}.sort-progress div{padding:3px;font-size:.45rem}
-  .response-layout{grid-template-rows:24% 76%}.response-card{padding:8px}.response-card h3{font-size:.78rem;margin-bottom:3px}.response-card .choice{font-size:.57rem;padding:5px}.need-box{padding:5px;margin-bottom:4px}.need-box span{font-size:.48rem}.need-box strong{font-size:.62rem}.response-card .feedback{font-size:.54rem}
-  .complete-panel{height:100%;padding:11px}.complete-panel h2{font-size:1.28rem}.final-rule{margin:5px 0;gap:3px}.final-rule div{padding:4px}.final-rule b{font-size:.48rem}.final-rule small{font-size:.5rem}.glorb-quote{font-size:.55rem;margin:5px 0}.certificate-cta{padding:5px}.certificate-cta p{display:none}
-  .certificate{width:100%;height:auto;max-height:100%;grid-template-columns:25% 75%;gap:9px;padding:24px 18px}.certificate-copy h1{font-size:1.45rem}.certificate-name{font-size:1.35rem}.certificate-summary{font-size:.62rem}.certificate-tools div{padding:5px 2px}.certificate-tools b{font-size:.48rem}.certificate-tools small{font-size:.48rem}.certificate-footer{font-size:.46rem}.certificate-actions{right:5px;bottom:5px}.certificate-actions .button{padding:5px 6px;min-height:30px;font-size:.48rem}
-}
-
-@media(max-width:600px) and (max-height:700px){
-  .cover-art{width:42vw;max-width:165px;margin-bottom:12px}
-  .cover-title{font-size:clamp(2.05rem,10.2vw,2.7rem)}
-}
 
 @media(max-height:650px) and (min-width:601px){#app{padding:6px 12px}.screen{height:100%}.paper-panel{padding:18px 24px}.story-copy{font-size:.82rem}.learn-shell,.hub-shell,.activity-shell{padding:12px}.helper-strip{padding:7px 12px}.helper-strip img{width:55px;height:55px}.mission-card{padding:12px}.case-card,.answer-card,.sort-card-main,.response-card{padding:14px}.certificate{max-height:100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -123,266 +78,360 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .info-grid{display:grid;gap:14px}.info-grid.two-col{grid-template-columns:1fr 1fr}.info-card{background:#fff;border:1px solid #cdd3d8;border-radius:20px;padding:20px 22px}.info-card.wide{grid-column:1/-1}.info-card h3{margin:0 0 8px;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}.info-card p{margin:0;font-size:.96rem;line-height:1.5}.info-card .sequence{font-size:1.25rem;font-weight:850;letter-spacing:.02em}.info-card.important{border-left:6px solid var(--orange);background:#fff8ee}.evidence-layout{display:grid;grid-template-columns:.9fr 1.25fr;gap:16px}.evidence-cards{display:grid;gap:12px}.references-card{align-self:start}.teacher-refs{margin:8px 0 0;padding-left:1.35rem;display:grid;gap:12px}.teacher-refs li{font-size:.9rem;line-height:1.45}.teacher-panel a{color:#0d2d4c;text-decoration-thickness:1px;text-underline-offset:2px}
 @media(max-width:820px){.teacher-card{width:98vw;border-radius:18px}.teacher-head{padding:18px}.teacher-close{width:50px;height:50px}.teacher-tabs{padding:12px;gap:6px;overflow-x:auto;flex-wrap:nowrap}.teacher-tab{white-space:nowrap;padding:9px 14px;font-size:.78rem}.teacher-panels{padding:14px;max-height:calc(92vh - 168px)}.info-grid.two-col,.evidence-layout{grid-template-columns:1fr}.info-card.wide{grid-column:auto}.info-card{padding:16px}.info-card p{font-size:.9rem}}
 
-/* 2026-09-02 phone-only full layout balance pass */
-@media(max-width:600px){
-  #app{padding:6px 8px 8px}
-  .screen,.shell{height:100%;min-height:0}
+/* ============================================================
+   2026-09-02 MOBILE AUDIT REBUILD
+   One authoritative phone breakpoint. No percentage-height rows.
+   The phone layout uses natural document flow + scrolling.
+   Desktop and tablet rules above remain unchanged.
+   ============================================================ */
+@media (max-width:600px){
+  :root{--phone-gutter:10px}
 
-  /* Split screens use the full phone height instead of desktop-style centring. */
-  .split{grid-template-columns:1fr;grid-template-rows:minmax(0,31%) minmax(0,69%)}
-  .boot-shell{grid-template-rows:minmax(0,30%) minmax(0,70%)}
-  .story-shell{grid-template-rows:minmax(0,34%) minmax(0,66%)}
-  .briefing-shell{grid-template-rows:minmax(0,27%) minmax(0,73%)}
-  .complete-shell{grid-template-rows:minmax(0,28%) minmax(0,72%)}
-  .split>.visual-panel,.split>.paper-panel{height:auto;min-height:0}
-  .visual-panel{padding:8px}
-  .visual-panel img{max-height:88%;max-width:82%}
-  .boot-shell .visual-panel img,.complete-shell .visual-panel img{max-height:86%;max-width:72%}
+  html,body{width:100%;height:100%;overflow:hidden}
 
-  /* Keep content close to its image instead of floating in the middle of a tall panel. */
-  .paper-panel{justify-content:flex-start;padding:15px 14px 14px}
-  .boot-shell .paper-panel{justify-content:flex-start;padding-top:18px;padding-bottom:14px}
-  .story-shell .paper-panel{justify-content:flex-start}
-  .briefing-shell .paper-panel{justify-content:flex-start}
-  .complete-shell .paper-panel{justify-content:flex-start}
-  .story-nav{margin-top:auto}
-  .boot-copy{width:100%;max-width:none}
+  /* Compact, touch-safe phone navigation */
+  .topbar{
+    height:52px;
+    padding:0 8px;
+    gap:0;
+  }
+  .brand{display:none}
+  .top-actions{width:100%;justify-content:center;gap:7px}
+  .top-control{
+    min-width:44px;
+    min-height:40px;
+    height:40px;
+    padding:7px 12px;
+    font-size:.72rem;
+  }
+  #forwardBtn{display:none}
+  #backBtn{width:44px;padding:0;display:grid;place-items:center}
+  #backBtn .nav-word{display:none}
+  #readBtn{width:44px;padding:0;display:grid;place-items:center}
+  #readBtn #readLabel{display:none}
+  #readBtn .sound-icon{font-size:1.08rem}
+  #helpBtn{padding-inline:12px}
+  #teacherBtn{padding-inline:12px}
+  .teacher-full{display:none}
+  .teacher-short{display:inline}
 
-  /* Cover: image occupies the upper zone; copy occupies the lower zone. */
-  .cover-frame{padding:8px}
-  .cover-inner{display:grid;grid-template-rows:minmax(0,40%) auto;align-content:center;padding:12px 12px 15px}
-  .cover-inner::before{inset:9px}
-  .cover-art{position:relative;left:auto;top:auto;bottom:auto;align-self:end;justify-self:start;width:52vw;max-width:205px;margin:0 0 12px 2px;overflow:hidden;z-index:1}
-  .cover-art img{width:185%;max-width:none;height:auto;transform:translateX(-22%);transform-origin:left top}
-  .cover-copy{position:relative;z-index:2;width:100%;max-width:none;margin:0;padding:0;align-self:start}
-  .cover-kicker{margin:0 0 8px}
-  .cover-title{font-size:clamp(2.05rem,10.8vw,2.9rem);line-height:.93;margin:0 0 11px}
-  .cover-signal{margin:0 0 10px}
-  .cover-status{margin:0 0 10px}
-  .cover-button{margin:0;width:100%}
+  .mission-progress{top:52px;height:4px}
 
-  /* Teaching screen: use the full card without oversized internal voids. */
-  .learn-shell{grid-template-rows:auto minmax(0,1fr) auto}
-  .learn-card{grid-template-columns:1fr;grid-template-rows:minmax(0,32%) minmax(0,68%)}
-  .learn-visual{height:auto;min-height:0}
-  .learn-copy{justify-content:center;min-height:0}
-
-  /* Activity panels stay dense and vertically balanced. */
-  .activity-shell{grid-template-rows:auto minmax(0,1fr) auto}
-  .case-board{grid-template-columns:1fr;grid-template-rows:minmax(0,54%) minmax(0,46%)}
-  .case-card,.answer-card,.sort-card-main,.response-card{height:auto;min-height:0}
-  .sort-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,31%) minmax(0,69%)}
-  .response-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,29%) minmax(0,71%)}
-  .sort-visual,.response-visual{height:auto;min-height:0}
-  .sort-card-main,.response-card{justify-content:center}
-
-  /* Completion remains compact, with actions grouped rather than vertically floating. */
-  .complete-panel{height:auto;min-height:0;justify-content:center}
-
-  /* Adult information remains usable on a phone without oversized chrome. */
-  .modal{padding:8px}
-  .teacher-card{width:100%;max-height:94vh;border-radius:16px}
-  .teacher-head{padding:14px 14px 10px}
-  .teacher-head h2{font-size:1.8rem}
-  .teacher-close{width:42px;height:42px;font-size:1.8rem}
-  .teacher-tabs{padding:9px 10px;gap:5px}
-  .teacher-tab{padding:8px 11px;font-size:.72rem}
-  .teacher-panels{padding:10px;max-height:calc(94vh - 145px)}
-  .info-card{padding:13px 14px;border-radius:14px}
-  .info-card h3{font-size:1rem;margin-bottom:5px}
-  .info-card p{font-size:.8rem;line-height:1.4}
-}
-
-@media(max-width:600px) and (max-height:740px){
-  .boot-shell{grid-template-rows:minmax(0,27%) minmax(0,73%)}
-  .story-shell{grid-template-rows:minmax(0,31%) minmax(0,69%)}
-  .cover-inner{grid-template-rows:minmax(0,36%) auto}
-  .cover-art{width:46vw;max-width:175px;margin-bottom:8px}
-  .cover-title{font-size:clamp(1.95rem,10vw,2.55rem)}
-  .paper-panel{padding:11px 12px}
-}
-
-/* 2026-09-02 PHONE CONTENT-FLOW CORRECTION
-   Phones should size from content, not desktop-style fixed percentage rows. */
-@media(max-width:600px){
-  html,body{height:100%;overflow:hidden}
+  /* The app is the scroll container on phone. Nothing else is forced to viewport height. */
   #app{
-    inset:54px 0 0 0;
-    padding:6px 8px 12px;
-    align-items:flex-start;
-    justify-content:center;
+    inset:56px 0 0 0;
+    padding:8px var(--phone-gutter) calc(20px + env(safe-area-inset-bottom));
+    display:block;
     overflow-y:auto;
     overflow-x:hidden;
     -webkit-overflow-scrolling:touch;
     overscroll-behavior-y:contain;
   }
-
   .screen{
     width:100%;
     height:auto;
     min-height:0;
-    align-items:flex-start;
-    justify-content:center;
+    display:block;
+    animation:none;
   }
   .shell{
     width:100%;
     height:auto;
     min-height:0;
     overflow:hidden;
+    box-shadow:none;
   }
 
-  /* Cover remains a deliberate full-screen composition. */
-  .cover-shell{min-height:calc(100svh - 72px)}
-  .cover-frame{min-height:calc(100svh - 74px)}
-  .cover-inner{min-height:calc(100svh - 92px)}
+  /* Shared phone typography and controls */
+  h1{font-size:clamp(2rem,10.7vw,2.8rem);line-height:.95}
+  h2{font-size:clamp(1.55rem,7.5vw,2rem);line-height:1.02}
+  h3{font-size:1.05rem}
+  .eyebrow{font-size:.64rem;margin-bottom:7px}
+  .lead{font-size:.94rem;line-height:1.42}
+  .button{min-height:44px;padding:10px 13px;font-size:.65rem}
 
-  /* All ordinary split screens become content-driven stacks. */
-  .split,
-  .boot-shell,
-  .story-shell,
-  .briefing-shell,
-  .complete-shell{
+  /* ---------- COVER ---------- */
+  .cover-shell{
+    min-height:calc(100dvh - 76px);
+    display:flex;
+  }
+  .cover-frame{
+    width:100%;
+    min-height:calc(100dvh - 76px);
+    padding:8px;
+    display:flex;
+  }
+  .cover-inner{
+    width:100%;
+    min-height:calc(100dvh - 92px);
+    padding:14px 14px 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:14px;
+  }
+  .cover-inner::before{inset:9px}
+  .cover-art{
+    position:relative;
+    left:auto;right:auto;top:auto;bottom:auto;
+    width:min(50vw,205px);
+    margin:0 0 0 2px;
+    overflow:hidden;
+    flex:0 0 auto;
+  }
+  .cover-art img{
+    display:block;
+    width:185%;
+    max-width:none;
+    height:auto;
+    transform:translateX(-22%);
+    transform-origin:left top;
+  }
+  .cover-copy{position:relative;width:100%;max-width:none;margin:0;padding:0}
+  .cover-kicker{text-align:left;margin:0 0 8px;font-size:.62rem}
+  .cover-title{font-size:clamp(2.15rem,11vw,3rem);line-height:.93;margin:0 0 12px}
+  .cover-signal{width:100%;max-width:none;grid-template-columns:auto 1fr auto;gap:7px;margin:0 0 11px}
+  .cover-signal-label,.cover-signal-value{font-size:.59rem}
+  .cover-signal-bar{grid-template-columns:repeat(20,1fr);gap:2px}
+  .cover-signal-bar i:nth-child(n+21){display:none}
+  .cover-signal-bar i{height:8px}
+  .cover-status{font-size:.82rem;margin:0 0 11px}
+  .cover-button{width:100%;min-width:0;margin:0}
+
+  /* ---------- SPLIT / STORY / INTRO / BRIEFING / COMPLETE ---------- */
+  .split,.boot-shell,.story-shell,.briefing-shell,.complete-shell{
     display:grid;
     grid-template-columns:1fr;
     grid-template-rows:auto auto;
     align-content:start;
   }
-  .split>.visual-panel,
-  .split>.paper-panel{
-    height:auto;
-    min-height:0;
-  }
-  .visual-panel{
-    height:clamp(205px,30svh,310px);
-    padding:14px 12px;
-  }
-  .visual-panel img{
-    width:auto;
-    height:auto;
-    max-width:82%;
-    max-height:100%;
-    object-fit:contain;
-  }
-  .boot-shell .visual-panel{height:clamp(175px,25svh,250px)}
-  .boot-shell .visual-panel img{max-width:68%;max-height:100%}
-  .story-shell .visual-panel{height:clamp(220px,32svh,330px)}
-  .briefing-shell .visual-panel{height:clamp(180px,26svh,260px)}
-  .complete-shell .visual-panel{height:clamp(180px,26svh,260px)}
+  .split>.visual-panel,.split>.paper-panel{height:auto;min-height:0}
 
-  /* No vertical centring inside tall cream panels. */
-  .paper-panel,
-  .paper-panel.compact,
-  .complete-panel{
+  .visual-panel{
+    height:230px;
+    padding:12px;
+    border-right:0;
+    border-bottom:1px solid rgba(16,39,67,.12);
+  }
+  .visual-panel img{width:auto;height:auto;max-width:82%;max-height:100%;object-fit:contain}
+
+  .boot-shell .visual-panel{height:180px}
+  .boot-shell .visual-panel img{max-width:62%}
+  .story-shell .visual-panel{height:245px}
+  .story-shell .visual-panel img{max-width:78%}
+  .briefing-shell .visual-panel{height:190px}
+  .complete-shell .visual-panel{height:185px}
+
+  .paper-panel,.paper-panel.compact,.complete-panel{
     height:auto;
     min-height:0;
-    justify-content:flex-start;
     overflow:visible;
+    justify-content:flex-start;
     padding:18px 16px;
   }
-  .story-shell .paper-panel{padding:17px 16px 16px}
-  .story-copy{margin-bottom:0}
-  .story-nav{
-    margin-top:20px;
-    padding-top:0;
-    align-items:center;
-  }
-  .story-nav .button{margin-left:auto}
-
-  /* Intro/name screen: keep every block in natural document flow. */
   .boot-copy{width:100%;max-width:none}
-  .boot-copy>*:last-child{margin-bottom:0}
-  .name-row{margin-top:10px}
+  .orientation{font-size:.84rem;line-height:1.4;margin-bottom:11px}
+  .boot-rule{grid-template-columns:repeat(4,1fr);gap:5px;margin:13px 0}
+  .boot-rule div{padding:8px 3px}
+  .boot-rule b{font-size:.55rem}
+  .name-row{margin-top:10px;gap:7px}
+  .name-row input{min-width:0;padding:10px 11px;font-size:16px}
+  .fine{font-size:.68rem;line-height:1.35;margin-top:7px}
 
-  /* Briefing: no fixed-height cream area. */
-  .briefing-list{margin:10px 0}
-  .intention{margin:10px 0 12px}
+  /* Story controls are in normal flow, directly after the copy. */
+  .story-copy{font-size:.82rem;line-height:1.48}
+  .story-nav{margin-top:18px;padding-top:0;display:flex;align-items:center;justify-content:space-between}
+  .story-nav .button{margin-left:auto}
+  .count{font-size:.62rem}
 
-  /* Learn screens: image, teaching copy and controls size to their contents. */
+  .briefing-list{gap:6px;margin:12px 0}
+  .briefing-list div{padding:8px 9px}
+  .briefing-list span{width:25px;height:25px}
+  .briefing-list b{font-size:.8rem}
+  .briefing-list small{font-size:.7rem}
+  .intention{font-size:.76rem;line-height:1.4;margin:10px 0 13px;padding:8px 10px}
+
+  /* ---------- LEARN ---------- */
   .learn-shell{
     height:auto;
     min-height:0;
+    padding:11px;
+    display:grid;
     grid-template-rows:auto auto auto;
+    gap:10px;
   }
+  .mini-head{align-items:end;padding-bottom:9px}
+  .mini-head h2{font-size:1.42rem;margin:0}
+  .step-count{font-size:.58rem}
   .learn-card{
     height:auto;
     min-height:0;
+    display:grid;
     grid-template-columns:1fr;
     grid-template-rows:auto auto;
   }
   .learn-visual{
-    height:clamp(180px,27svh,270px);
+    height:225px;
     min-height:0;
     padding:12px;
+    border-bottom:1px solid rgba(16,39,67,.12);
   }
-  .learn-copy{
-    height:auto;
-    min-height:0;
-    justify-content:flex-start;
-    padding:15px 14px;
-  }
-  .learn-footer{margin-top:8px}
+  .learn-visual img{width:auto;height:auto;max-width:82%;max-height:100%;object-fit:contain}
+  .learn-copy{height:auto;min-height:0;justify-content:flex-start;padding:17px 15px}
+  .learn-copy h2{font-size:1.65rem;margin-bottom:8px}
+  .learn-copy .lead{font-size:.92rem;margin-bottom:9px}
+  .remember{margin-top:8px;padding:10px 11px;font-size:.78rem;line-height:1.4}
+  .glorb-note{margin:9px 0 0;font-size:.68rem;line-height:1.4}
+  .learn-footer{min-height:0;margin-top:0;align-items:center}
+  .learn-footer>div:last-child{display:flex;gap:6px}
 
-  /* Mission hub: cards follow one another rather than stretching to viewport. */
+  /* ---------- HUB ---------- */
   .hub-shell{
-    height:auto;
-    min-height:0;
+    height:auto;min-height:0;
+    padding:11px;
+    display:grid;
     grid-template-rows:auto auto auto;
+    gap:9px;
   }
-  .mission-grid{height:auto;min-height:0}
+  .hub-shell h2{font-size:1.4rem}
+  .helper-strip{grid-template-columns:54px 1fr;gap:9px;padding:8px 10px}
+  .helper-strip img{width:50px;height:50px}
+  .helper-strip p{font-size:.72rem;line-height:1.35}
+  .mission-grid{display:grid;grid-template-columns:1fr;gap:7px;height:auto}
+  .mission-card{
+    min-height:96px;
+    padding:11px 12px;
+    display:grid;
+    grid-template-columns:45px 1fr auto;
+    align-items:center;
+    gap:9px;
+  }
+  .mission-card .num{grid-column:1;font-size:.55rem}
+  .mission-card>div{grid-column:2}
+  .mission-card strong{font-size:.9rem;margin:0 0 4px}
+  .mission-card p{font-size:.72rem;line-height:1.35}
+  .mission-card em{grid-column:3;margin:0;font-size:.53rem;white-space:nowrap}
 
-  /* Activities: remove 1fr/percentage rows that manufacture empty space. */
+  /* ---------- ALL ACTIVITIES ---------- */
   .activity-shell{
-    height:auto;
-    min-height:0;
-    grid-template-rows:auto auto auto;
-  }
-  .case-board,
-  .sort-layout,
-  .response-layout{
-    height:auto;
-    min-height:0;
-    grid-template-columns:1fr;
-    grid-template-rows:auto auto;
-  }
-  .case-card,
-  .answer-card,
-  .sort-card-main,
-  .response-card{
-    height:auto;
-    min-height:0;
-  }
-  .case-card{padding:11px;grid-template-columns:116px 1fr;gap:10px}
-  .case-image{height:145px}
-  .answer-card{padding:12px}
-  .sort-visual,
-  .response-visual{
-    height:clamp(180px,27svh,270px);
-    min-height:0;
+    height:auto;min-height:0;
     padding:10px;
+    display:grid;
+    grid-template-rows:auto auto auto;
+    gap:9px;
   }
-  .sort-card-main,
-  .response-card{
-    justify-content:flex-start;
-    padding:13px 12px;
-  }
-  .activity-foot{margin-top:2px}
+  .activity-head{gap:8px;align-items:flex-start}
+  .activity-head h2{font-size:1.5rem}
+  .activity-sub{font-size:.7rem;line-height:1.35;margin-top:4px}
+  .activity-head .step-count{flex:0 0 auto;padding-top:2px}
+  .activity-foot{margin-top:0;min-height:44px;gap:8px}
+  .small-status{font-size:.54rem;line-height:1.3}
 
-  /* Completion should finish after its content instead of filling a fixed lower row. */
+  /* Mission 1: stack the case art above the clues so the image stays readable. */
+  .case-board{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .case-card,.answer-card{height:auto;min-height:0;overflow:visible}
+  .case-card{display:block;padding:14px}
+  .case-image{width:min(100%,270px);height:205px;margin:0 auto 13px;padding:8px}
+  .case-text{font-size:.82rem;line-height:1.4}
+  .clue-grid{grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .clue{min-height:58px;padding:8px}
+  .clue b{font-size:.58rem}
+  .clue small{font-size:.69rem;line-height:1.3}
+  .answer-card{padding:14px;justify-content:flex-start}
+  .answer-card h3{font-size:1.05rem;margin-bottom:8px}
+  .choices{gap:7px}
+  .choice{min-height:44px;padding:10px 11px;font-size:.8rem}
+  .feedback{min-height:0;margin-top:8px;padding:9px 10px;font-size:.72rem;line-height:1.4}
+  #caseNext{margin-top:9px}
+
+  /* Mission 2 */
+  .sort-layout{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .sort-visual{height:215px;min-height:0;padding:12px;border-bottom:1px solid rgba(16,39,67,.12)}
+  .sort-visual img{max-width:80%;max-height:100%;object-fit:contain}
+  .sort-card-main{height:auto;min-height:0;justify-content:flex-start;padding:14px}
+  .sort-situation{font-size:1rem;line-height:1.4;margin-bottom:12px}
+  .sort-options{grid-template-columns:repeat(3,1fr);gap:6px}
+  .sort-option{min-height:70px;padding:9px 5px}
+  .sort-option b{font-size:.58rem}
+  .sort-option small{font-size:.62rem;line-height:1.25}
+  .sort-progress{margin-top:9px;gap:5px}
+  .sort-progress div{padding:6px;font-size:.52rem}
+  #sortNext{margin-top:8px}
+
+  /* Mission 3 */
+  .response-layout{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .response-visual{height:215px;min-height:0;padding:12px;border-bottom:1px solid rgba(16,39,67,.12)}
+  .response-visual img{max-width:80%;max-height:100%;object-fit:contain}
+  .response-card{height:auto;min-height:0;justify-content:flex-start;padding:14px}
+  .response-card .choice{font-size:.76rem;padding:10px}
+  .need-box{padding:9px 10px;margin-bottom:10px}
+  .need-box span{font-size:.55rem}
+  .need-box strong{font-size:.76rem}
+  #responseNext{margin-top:8px}
+
+  /* ---------- COMPLETION ---------- */
   .complete-panel{justify-content:flex-start}
+  .complete-panel h2{font-size:1.62rem}
+  .final-rule{grid-template-columns:1fr 1fr;gap:6px;margin:11px 0}
+  .final-rule div{padding:8px}
+  .final-rule b{font-size:.58rem}
+  .final-rule small{font-size:.66rem}
+  .glorb-quote{font-size:.68rem;line-height:1.4;margin:10px 0}
+  .certificate-cta{align-items:center;padding:9px 10px}
+  .certificate-cta p{font-size:.67rem}
 
-  /* Certificate can scroll if a short phone cannot display it at once. */
-  .certificate-screen{min-height:0}
-  .certificate-wrap{height:auto;min-height:0;padding:8px 0 44px}
+  /* ---------- CERTIFICATE ---------- */
+  .certificate-screen{height:auto;min-height:0}
+  .certificate-wrap{height:auto;min-height:0;padding:0 0 60px}
+  .certificate{
+    width:100%;
+    height:auto;
+    max-height:none;
+    aspect-ratio:auto;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:28px 20px 74px;
+  }
+  .certificate-art{height:130px}
+  .certificate-art img{max-height:100%;max-width:48%}
+  .certificate-copy h1{font-size:1.9rem}
+  .certificate-name{font-size:1.75rem;white-space:normal}
+  .certificate-summary{font-size:.76rem}
+  .certificate-tools{grid-template-columns:1fr 1fr;gap:5px}
+  .certificate-tools b{font-size:.56rem}
+  .certificate-tools small{font-size:.61rem}
+  .certificate-footer{gap:8px;font-size:.5rem}
+  .certificate-actions{left:16px;right:16px;bottom:14px;justify-content:center}
 
-  /* Teacher/help modals may scroll internally; never force viewport-height cards. */
-  .modal{overflow:auto;-webkit-overflow-scrolling:touch}
+  /* ---------- MODALS ---------- */
+  .modal{padding:7px;overflow:auto;-webkit-overflow-scrolling:touch}
+  .modal-card{max-height:calc(100dvh - 18px)}
+  .teacher-card{width:100%;border-radius:14px;max-height:calc(100dvh - 18px)}
+  .teacher-head{padding:14px 14px 10px}
+  .teacher-head h2{font-size:1.75rem}
+  .teacher-close{width:44px;height:44px;font-size:1.8rem}
+  .teacher-tabs{padding:9px 10px;gap:5px;overflow-x:auto;flex-wrap:nowrap}
+  .teacher-tab{white-space:nowrap;padding:8px 11px;font-size:.72rem}
+  .teacher-panels{padding:10px;max-height:calc(100dvh - 150px)}
+  .info-grid.two-col,.evidence-layout{grid-template-columns:1fr}
+  .info-card.wide{grid-column:auto}
+  .info-card{padding:13px 14px;border-radius:14px}
+  .info-card h3{font-size:1.02rem;margin-bottom:5px}
+  .info-card p{font-size:.8rem;line-height:1.42}
+  .info-card .sequence{font-size:1rem}
+  .teacher-refs li{font-size:.76rem;line-height:1.4}
+  .help-card{width:100%;padding:18px}
+  .help-card p{font-size:.84rem;line-height:1.5}
 }
 
-/* Very short phones get slightly smaller media areas, still content-driven. */
-@media(max-width:600px) and (max-height:700px){
-  .visual-panel{height:190px}
-  .boot-shell .visual-panel{height:160px}
+/* Short/narrow phones: reduce media, never manufacture blank space. */
+@media (max-width:600px) and (max-height:720px){
+  .cover-inner{gap:9px;justify-content:flex-start;padding-top:14px}
+  .cover-art{width:min(42vw,165px)}
+  .cover-title{font-size:clamp(1.95rem,10vw,2.55rem)}
+  .boot-shell .visual-panel{height:155px}
   .story-shell .visual-panel{height:205px}
   .briefing-shell .visual-panel,.complete-shell .visual-panel{height:165px}
-  .learn-visual,.sort-visual,.response-visual{height:165px}
+  .learn-visual,.sort-visual,.response-visual{height:185px}
 }
+
