@@ -67,3 +67,15 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - Rebalanced the cover, name/orientation, story, briefing, teaching, activity and completion layouts.
 - Desktop and iPad rules remain unchanged.
 - No new assets are required.
+
+## 2026-09-02 mobile content-flow correction
+The previous mobile build still used fixed viewport heights and percentage grid rows on several screens. That caused large empty bands inside story and intro panels on tall phones.
+
+Phone CSS now uses normal responsive content flow:
+- ordinary screens size to their content instead of forcing each panel to fill a percentage of the viewport
+- story navigation sits directly after the story text instead of being pinned to the bottom of a tall cream panel
+- image areas use capped responsive heights
+- learning, hub and activity panels use `auto` rows instead of `1fr` / percentage rows
+- the app can scroll vertically on a phone when content genuinely exceeds the available height
+- desktop and iPad breakpoints are unchanged
+- no asset paths were changed

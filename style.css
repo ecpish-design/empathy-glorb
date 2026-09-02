@@ -201,3 +201,188 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
   .cover-title{font-size:clamp(1.95rem,10vw,2.55rem)}
   .paper-panel{padding:11px 12px}
 }
+
+/* 2026-09-02 PHONE CONTENT-FLOW CORRECTION
+   Phones should size from content, not desktop-style fixed percentage rows. */
+@media(max-width:600px){
+  html,body{height:100%;overflow:hidden}
+  #app{
+    inset:54px 0 0 0;
+    padding:6px 8px 12px;
+    align-items:flex-start;
+    justify-content:center;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-y:contain;
+  }
+
+  .screen{
+    width:100%;
+    height:auto;
+    min-height:0;
+    align-items:flex-start;
+    justify-content:center;
+  }
+  .shell{
+    width:100%;
+    height:auto;
+    min-height:0;
+    overflow:hidden;
+  }
+
+  /* Cover remains a deliberate full-screen composition. */
+  .cover-shell{min-height:calc(100svh - 72px)}
+  .cover-frame{min-height:calc(100svh - 74px)}
+  .cover-inner{min-height:calc(100svh - 92px)}
+
+  /* All ordinary split screens become content-driven stacks. */
+  .split,
+  .boot-shell,
+  .story-shell,
+  .briefing-shell,
+  .complete-shell{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+    align-content:start;
+  }
+  .split>.visual-panel,
+  .split>.paper-panel{
+    height:auto;
+    min-height:0;
+  }
+  .visual-panel{
+    height:clamp(205px,30svh,310px);
+    padding:14px 12px;
+  }
+  .visual-panel img{
+    width:auto;
+    height:auto;
+    max-width:82%;
+    max-height:100%;
+    object-fit:contain;
+  }
+  .boot-shell .visual-panel{height:clamp(175px,25svh,250px)}
+  .boot-shell .visual-panel img{max-width:68%;max-height:100%}
+  .story-shell .visual-panel{height:clamp(220px,32svh,330px)}
+  .briefing-shell .visual-panel{height:clamp(180px,26svh,260px)}
+  .complete-shell .visual-panel{height:clamp(180px,26svh,260px)}
+
+  /* No vertical centring inside tall cream panels. */
+  .paper-panel,
+  .paper-panel.compact,
+  .complete-panel{
+    height:auto;
+    min-height:0;
+    justify-content:flex-start;
+    overflow:visible;
+    padding:18px 16px;
+  }
+  .story-shell .paper-panel{padding:17px 16px 16px}
+  .story-copy{margin-bottom:0}
+  .story-nav{
+    margin-top:20px;
+    padding-top:0;
+    align-items:center;
+  }
+  .story-nav .button{margin-left:auto}
+
+  /* Intro/name screen: keep every block in natural document flow. */
+  .boot-copy{width:100%;max-width:none}
+  .boot-copy>*:last-child{margin-bottom:0}
+  .name-row{margin-top:10px}
+
+  /* Briefing: no fixed-height cream area. */
+  .briefing-list{margin:10px 0}
+  .intention{margin:10px 0 12px}
+
+  /* Learn screens: image, teaching copy and controls size to their contents. */
+  .learn-shell{
+    height:auto;
+    min-height:0;
+    grid-template-rows:auto auto auto;
+  }
+  .learn-card{
+    height:auto;
+    min-height:0;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+  }
+  .learn-visual{
+    height:clamp(180px,27svh,270px);
+    min-height:0;
+    padding:12px;
+  }
+  .learn-copy{
+    height:auto;
+    min-height:0;
+    justify-content:flex-start;
+    padding:15px 14px;
+  }
+  .learn-footer{margin-top:8px}
+
+  /* Mission hub: cards follow one another rather than stretching to viewport. */
+  .hub-shell{
+    height:auto;
+    min-height:0;
+    grid-template-rows:auto auto auto;
+  }
+  .mission-grid{height:auto;min-height:0}
+
+  /* Activities: remove 1fr/percentage rows that manufacture empty space. */
+  .activity-shell{
+    height:auto;
+    min-height:0;
+    grid-template-rows:auto auto auto;
+  }
+  .case-board,
+  .sort-layout,
+  .response-layout{
+    height:auto;
+    min-height:0;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+  }
+  .case-card,
+  .answer-card,
+  .sort-card-main,
+  .response-card{
+    height:auto;
+    min-height:0;
+  }
+  .case-card{padding:11px;grid-template-columns:116px 1fr;gap:10px}
+  .case-image{height:145px}
+  .answer-card{padding:12px}
+  .sort-visual,
+  .response-visual{
+    height:clamp(180px,27svh,270px);
+    min-height:0;
+    padding:10px;
+  }
+  .sort-card-main,
+  .response-card{
+    justify-content:flex-start;
+    padding:13px 12px;
+  }
+  .activity-foot{margin-top:2px}
+
+  /* Completion should finish after its content instead of filling a fixed lower row. */
+  .complete-panel{justify-content:flex-start}
+
+  /* Certificate can scroll if a short phone cannot display it at once. */
+  .certificate-screen{min-height:0}
+  .certificate-wrap{height:auto;min-height:0;padding:8px 0 44px}
+
+  /* Teacher/help modals may scroll internally; never force viewport-height cards. */
+  .modal{overflow:auto;-webkit-overflow-scrolling:touch}
+}
+
+/* Very short phones get slightly smaller media areas, still content-driven. */
+@media(max-width:600px) and (max-height:700px){
+  .visual-panel{height:190px}
+  .boot-shell .visual-panel{height:160px}
+  .story-shell .visual-panel{height:205px}
+  .briefing-shell .visual-panel,.complete-shell .visual-panel{height:165px}
+  .learn-visual,.sort-visual,.response-visual{height:165px}
+}
