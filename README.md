@@ -26,3 +26,10 @@ Replace these files at the repository root:
 - `README.md` (optional)
 
 Keep your existing assets. If `assets/cover.png` is already there, it does not need to be replaced.
+
+
+## Cover-only tablet/desktop correction
+- Rebuilt only the cover for widths above 600px.
+- Glorb is now a large left-hand visual anchor.
+- Title, signal, decoded message and button form a stronger right-hand hierarchy.
+- Phone/mobile layouts and the rest of the game are unchanged.
