@@ -60,3 +60,10 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - Glorb remains above the transmission text.
 - Sizes, alignment, colours, desktop and iPad layouts remain unchanged.
 - No new assets are required.
+
+## Latest mobile pass
+- Rebalanced every student-facing phone layout, not only the cover.
+- Removed large artificial blank bands caused by desktop percentage rows and vertical centring.
+- Rebalanced the cover, name/orientation, story, briefing, teaching, activity and completion layouts.
+- Desktop and iPad rules remain unchanged.
+- No new assets are required.

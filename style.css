@@ -122,3 +122,82 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .teacher-panel{display:none}.teacher-panel.active{display:block}
 .info-grid{display:grid;gap:14px}.info-grid.two-col{grid-template-columns:1fr 1fr}.info-card{background:#fff;border:1px solid #cdd3d8;border-radius:20px;padding:20px 22px}.info-card.wide{grid-column:1/-1}.info-card h3{margin:0 0 8px;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}.info-card p{margin:0;font-size:.96rem;line-height:1.5}.info-card .sequence{font-size:1.25rem;font-weight:850;letter-spacing:.02em}.info-card.important{border-left:6px solid var(--orange);background:#fff8ee}.evidence-layout{display:grid;grid-template-columns:.9fr 1.25fr;gap:16px}.evidence-cards{display:grid;gap:12px}.references-card{align-self:start}.teacher-refs{margin:8px 0 0;padding-left:1.35rem;display:grid;gap:12px}.teacher-refs li{font-size:.9rem;line-height:1.45}.teacher-panel a{color:#0d2d4c;text-decoration-thickness:1px;text-underline-offset:2px}
 @media(max-width:820px){.teacher-card{width:98vw;border-radius:18px}.teacher-head{padding:18px}.teacher-close{width:50px;height:50px}.teacher-tabs{padding:12px;gap:6px;overflow-x:auto;flex-wrap:nowrap}.teacher-tab{white-space:nowrap;padding:9px 14px;font-size:.78rem}.teacher-panels{padding:14px;max-height:calc(92vh - 168px)}.info-grid.two-col,.evidence-layout{grid-template-columns:1fr}.info-card.wide{grid-column:auto}.info-card{padding:16px}.info-card p{font-size:.9rem}}
+
+/* 2026-09-02 phone-only full layout balance pass */
+@media(max-width:600px){
+  #app{padding:6px 8px 8px}
+  .screen,.shell{height:100%;min-height:0}
+
+  /* Split screens use the full phone height instead of desktop-style centring. */
+  .split{grid-template-columns:1fr;grid-template-rows:minmax(0,31%) minmax(0,69%)}
+  .boot-shell{grid-template-rows:minmax(0,30%) minmax(0,70%)}
+  .story-shell{grid-template-rows:minmax(0,34%) minmax(0,66%)}
+  .briefing-shell{grid-template-rows:minmax(0,27%) minmax(0,73%)}
+  .complete-shell{grid-template-rows:minmax(0,28%) minmax(0,72%)}
+  .split>.visual-panel,.split>.paper-panel{height:auto;min-height:0}
+  .visual-panel{padding:8px}
+  .visual-panel img{max-height:88%;max-width:82%}
+  .boot-shell .visual-panel img,.complete-shell .visual-panel img{max-height:86%;max-width:72%}
+
+  /* Keep content close to its image instead of floating in the middle of a tall panel. */
+  .paper-panel{justify-content:flex-start;padding:15px 14px 14px}
+  .boot-shell .paper-panel{justify-content:flex-start;padding-top:18px;padding-bottom:14px}
+  .story-shell .paper-panel{justify-content:flex-start}
+  .briefing-shell .paper-panel{justify-content:flex-start}
+  .complete-shell .paper-panel{justify-content:flex-start}
+  .story-nav{margin-top:auto}
+  .boot-copy{width:100%;max-width:none}
+
+  /* Cover: image occupies the upper zone; copy occupies the lower zone. */
+  .cover-frame{padding:8px}
+  .cover-inner{display:grid;grid-template-rows:minmax(0,40%) auto;align-content:center;padding:12px 12px 15px}
+  .cover-inner::before{inset:9px}
+  .cover-art{position:relative;left:auto;top:auto;bottom:auto;align-self:end;justify-self:start;width:52vw;max-width:205px;margin:0 0 12px 2px;overflow:hidden;z-index:1}
+  .cover-art img{width:185%;max-width:none;height:auto;transform:translateX(-22%);transform-origin:left top}
+  .cover-copy{position:relative;z-index:2;width:100%;max-width:none;margin:0;padding:0;align-self:start}
+  .cover-kicker{margin:0 0 8px}
+  .cover-title{font-size:clamp(2.05rem,10.8vw,2.9rem);line-height:.93;margin:0 0 11px}
+  .cover-signal{margin:0 0 10px}
+  .cover-status{margin:0 0 10px}
+  .cover-button{margin:0;width:100%}
+
+  /* Teaching screen: use the full card without oversized internal voids. */
+  .learn-shell{grid-template-rows:auto minmax(0,1fr) auto}
+  .learn-card{grid-template-columns:1fr;grid-template-rows:minmax(0,32%) minmax(0,68%)}
+  .learn-visual{height:auto;min-height:0}
+  .learn-copy{justify-content:center;min-height:0}
+
+  /* Activity panels stay dense and vertically balanced. */
+  .activity-shell{grid-template-rows:auto minmax(0,1fr) auto}
+  .case-board{grid-template-columns:1fr;grid-template-rows:minmax(0,54%) minmax(0,46%)}
+  .case-card,.answer-card,.sort-card-main,.response-card{height:auto;min-height:0}
+  .sort-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,31%) minmax(0,69%)}
+  .response-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,29%) minmax(0,71%)}
+  .sort-visual,.response-visual{height:auto;min-height:0}
+  .sort-card-main,.response-card{justify-content:center}
+
+  /* Completion remains compact, with actions grouped rather than vertically floating. */
+  .complete-panel{height:auto;min-height:0;justify-content:center}
+
+  /* Adult information remains usable on a phone without oversized chrome. */
+  .modal{padding:8px}
+  .teacher-card{width:100%;max-height:94vh;border-radius:16px}
+  .teacher-head{padding:14px 14px 10px}
+  .teacher-head h2{font-size:1.8rem}
+  .teacher-close{width:42px;height:42px;font-size:1.8rem}
+  .teacher-tabs{padding:9px 10px;gap:5px}
+  .teacher-tab{padding:8px 11px;font-size:.72rem}
+  .teacher-panels{padding:10px;max-height:calc(94vh - 145px)}
+  .info-card{padding:13px 14px;border-radius:14px}
+  .info-card h3{font-size:1rem;margin-bottom:5px}
+  .info-card p{font-size:.8rem;line-height:1.4}
+}
+
+@media(max-width:600px) and (max-height:740px){
+  .boot-shell{grid-template-rows:minmax(0,27%) minmax(0,73%)}
+  .story-shell{grid-template-rows:minmax(0,31%) minmax(0,69%)}
+  .cover-inner{grid-template-rows:minmax(0,36%) auto}
+  .cover-art{width:46vw;max-width:175px;margin-bottom:8px}
+  .cover-title{font-size:clamp(1.95rem,10vw,2.55rem)}
+  .paper-panel{padding:11px 12px}
+}
