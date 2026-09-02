@@ -76,7 +76,7 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 
   .cover-frame{padding:8px}.cover-inner{padding:14px 14px 16px}.cover-inner::before{inset:9px}.cover-copy{max-width:100%;padding:18px 2px 0 0;margin:0}
   .cover-kicker{text-align:left;margin-bottom:8px;font-size:.61rem}.cover-title{font-size:clamp(2.35rem,11.5vw,3rem);line-height:.93;margin-bottom:12px;max-width:95%}
-  .cover-art{left:-12px;bottom:-8px;width:56vw;max-width:245px}.cover-signal{grid-template-columns:auto 1fr auto;gap:7px;margin:0 0 12px;max-width:100%}
+  .cover-art{left:-7vw;top:51%;bottom:auto;width:54vw;max-width:230px;z-index:1}.cover-art img{width:200%;max-width:none;transform:translateX(-25%);transform-origin:center top}.cover-signal{grid-template-columns:auto 1fr auto;gap:7px;margin:0 0 12px;max-width:100%}
   .cover-signal-label,.cover-signal-value{font-size:.58rem}.cover-signal-bar{grid-template-columns:repeat(20,1fr);gap:2px}.cover-signal-bar i:nth-child(n+21){display:none}.cover-signal-bar i{height:8px}
   .cover-status{font-size:.77rem;margin:0 0 10px}.cover-button{width:min(76%,300px);min-width:0;padding:9px 10px;margin-left:auto;margin-right:0}
 
@@ -95,6 +95,12 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
   .complete-panel{height:100%;padding:11px}.complete-panel h2{font-size:1.28rem}.final-rule{margin:5px 0;gap:3px}.final-rule div{padding:4px}.final-rule b{font-size:.48rem}.final-rule small{font-size:.5rem}.glorb-quote{font-size:.55rem;margin:5px 0}.certificate-cta{padding:5px}.certificate-cta p{display:none}
   .certificate{width:100%;height:auto;max-height:100%;grid-template-columns:25% 75%;gap:9px;padding:24px 18px}.certificate-copy h1{font-size:1.45rem}.certificate-name{font-size:1.35rem}.certificate-summary{font-size:.62rem}.certificate-tools div{padding:5px 2px}.certificate-tools b{font-size:.48rem}.certificate-tools small{font-size:.48rem}.certificate-footer{font-size:.46rem}.certificate-actions{right:5px;bottom:5px}.certificate-actions .button{padding:5px 6px;min-height:30px;font-size:.48rem}
 }
+
+@media(max-width:600px) and (max-height:700px){
+  .cover-art{top:55%;width:48vw;max-width:205px}
+  .cover-title{font-size:clamp(2.15rem,10.5vw,2.75rem)}
+}
+
 @media(max-height:650px) and (min-width:601px){#app{padding:6px 12px}.screen{height:100%}.paper-panel{padding:18px 24px}.story-copy{font-size:.82rem}.learn-shell,.hub-shell,.activity-shell{padding:12px}.helper-strip{padding:7px 12px}.helper-strip img{width:55px;height:55px}.mission-card{padding:12px}.case-card,.answer-card,.sort-card-main,.response-card{padding:14px}.certificate{max-height:100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media print{body{background:white}.topbar,.mission-progress,.certificate-actions,.stars{display:none!important}#app{position:static;padding:0}.screen{display:none!important}.certificate-screen{display:block!important}.certificate{width:297mm;height:210mm;max-height:none;border-width:5px;page-break-inside:avoid}@page{size:A4 landscape;margin:0}}

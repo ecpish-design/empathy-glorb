@@ -36,3 +36,8 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - Mobile split screens now use explicit image/content rows, removing the large blank navy gap.
 - The mobile cover has a larger Glorb and tighter content spacing.
 - Phone typography and controls are reduced selectively so core screens fit more cleanly.
+
+## Mobile cover correction
+- Glorb is visually cropped/scaled on phones so the transparent canvas does not make him appear tiny.
+- Glorb is positioned directly beneath the transmission controls instead of at the bottom of the viewport.
+- iPad and desktop cover rules are unchanged.
