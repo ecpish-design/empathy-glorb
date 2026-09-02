@@ -9,7 +9,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--space
 button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .stars{position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:105px 105px}
 .topbar{height:64px;position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(18px,3vw,48px);background:#07111f;border-bottom:1px solid var(--line)}
-.brand{font:700 .72rem "IBM Plex Mono",monospace;letter-spacing:.14em;white-space:nowrap}.brand span{color:var(--orange)}.top-actions{display:flex;align-items:center;gap:10px}.top-control{min-height:42px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:transparent;color:#fff;padding:9px 16px;font:750 .72rem Inter,Arial,sans-serif;letter-spacing:0}.top-control:hover,.top-control:focus-visible{border-color:rgba(255,255,255,.62);outline:none;background:rgba(255,255,255,.035)}.top-control:disabled{opacity:.28;cursor:not-allowed}.read-control{font-weight:800}.read-control.speaking{background:var(--orange);border-color:var(--orange)}.stage-label{display:none}.sound-icon{font-size:1rem;line-height:1}
+.brand{font:700 .72rem "IBM Plex Mono",monospace;letter-spacing:.14em;white-space:nowrap}.brand span{color:var(--orange)}.top-actions{display:flex;align-items:center;gap:10px}.top-control{min-height:42px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:transparent;color:#fff;padding:9px 16px;font:750 .72rem Inter,Arial,sans-serif;letter-spacing:0}.top-control:hover,.top-control:focus-visible{border-color:rgba(255,255,255,.62);outline:none;background:rgba(255,255,255,.035)}.top-control:disabled{opacity:.28;cursor:not-allowed}.read-control{font-weight:800}.read-control.speaking{background:var(--orange);border-color:var(--orange)}.stage-label{display:none}.sound-icon{font-size:1rem;line-height:1}.teacher-short{display:none}h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
 
 /* Whole-mission progress bar */
 .mission-progress{position:fixed;top:64px;left:0;right:0;height:6px;z-index:39;background:rgba(255,255,255,.11);overflow:hidden}
@@ -58,20 +58,7 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
   .sort-options{gap:5px}.sort-option{padding:8px 5px}.response-card{padding:14px}.certificate{grid-template-columns:135px 1fr;gap:15px;padding:28px}.certificate-actions .button{min-height:34px;padding:7px 9px;font-size:.56rem}.teacher-grid{grid-template-columns:1fr}
 }
 
-@media(max-width:600px){
-  .topbar{height:54px;padding:0 6px}.brand{display:none}.top-actions{width:100%;justify-content:center;gap:4px}.top-control{min-height:34px;padding:6px 8px;font-size:.56rem}.top-control.nav-control{padding-inline:7px}.teacher-grid{grid-template-columns:1fr}
-  .mission-progress{top:54px;height:5px}
-  #app{inset:59px 0 0 0;padding:6px}.screen{width:100%}.split,.learn-card,.case-board,.sort-layout,.response-layout,.complete-shell{grid-template-columns:1fr}
-  .cover-frame{padding:10px}.cover-inner{padding:14px 14px 18px}.cover-inner::before{inset:10px}.cover-copy{max-width:100%;padding:18px 4px 0 0}.cover-kicker{text-align:left;margin-bottom:10px}.cover-title{font-size:2.5rem;margin-bottom:14px}.cover-art{left:-18px;bottom:-4px;width:45vw;max-width:190px}.cover-signal{grid-template-columns:1fr;gap:7px;margin-bottom:14px}.cover-signal-label,.cover-signal-value{font-size:.66rem}.cover-signal-value{justify-self:end}.cover-signal-bar{grid-template-columns:repeat(20,1fr);gap:3px}.cover-signal-bar i:nth-child(n+21){display:none}.cover-signal-bar i{height:9px}.cover-status{font-size:.82rem;margin-bottom:12px}.cover-button{width:100%;min-width:0}.visual-panel,.learn-visual,.sort-visual,.response-visual{height:30%;min-height:0;border-right:0;border-bottom:1px solid rgba(16,39,67,.1);padding:6px}.paper-panel{height:70%;padding:13px}.paper-panel.compact{padding:12px}.paper-panel h1{font-size:2.15rem}.paper-panel h2{font-size:1.55rem}.lead{font-size:.84rem;line-height:1.42}.boot-rule{margin:9px 0;gap:4px}.boot-rule div{padding:7px 3px}.boot-rule b{font-size:.54rem}.name-row{margin-top:9px}.name-row input{padding:9px}.button{min-height:38px;padding:9px 11px;font-size:.61rem}
-  .story-copy{font-size:.76rem;line-height:1.38}.briefing-list{gap:4px;margin:7px 0}.briefing-list div{padding:6px 8px}.briefing-list small{font-size:.66rem}.intention{font-size:.72rem;margin:6px 0 8px;padding:7px 9px}
-  .learn-shell{padding:9px;gap:7px}.mini-head h2{font-size:1.25rem}.learn-card{grid-template-rows:28% 72%}.learn-visual{height:auto}.learn-copy{padding:11px}.learn-copy h2{font-size:1.35rem}.remember{padding:8px;font-size:.7rem}.glorb-note{font-size:.64rem;margin-top:7px}.learn-footer{min-height:38px}
-  .hub-shell{padding:9px;gap:7px}.hub-shell h2{font-size:1.25rem}.helper-strip{padding:6px 8px}.helper-strip p{font-size:.66rem;line-height:1.32}.mission-grid{grid-template-columns:1fr;gap:5px}.mission-card{min-height:0;padding:7px 10px;display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:7px}.mission-card .num{grid-column:1}.mission-card>div{grid-column:2}.mission-card strong{margin:0 0 2px;font-size:.8rem}.mission-card p{font-size:.66rem;line-height:1.25}.mission-card em{grid-column:3;margin:0;font-size:.52rem;white-space:nowrap}
-  .activity-shell{padding:8px;gap:6px}.activity-head h2{font-size:1.18rem}.activity-sub{font-size:.65rem;line-height:1.25}.case-board{grid-template-rows:52% 48%}.case-card{grid-template-columns:120px 1fr;height:auto;padding:8px;gap:8px}.case-image{width:100%;height:150px}.case-text{font-size:.72rem}.clue-grid{margin-top:5px;gap:3px}.clue{min-height:36px;padding:4px}.clue b{font-size:.5rem}.clue small{font-size:.56rem}.answer-card{padding:9px}.answer-card h3{font-size:.9rem;margin-bottom:5px}.choices{gap:4px}.choice{padding:6px 7px;font-size:.65rem}.feedback{margin-top:4px;min-height:29px;font-size:.58rem;padding:5px}.activity-foot{min-height:36px}.small-status{font-size:.52rem}
-  .sort-layout{grid-template-rows:30% 70%}.sort-card-main{padding:10px}.sort-situation{font-size:.92rem;margin-bottom:7px}.sort-options{grid-template-columns:1fr 1fr 1fr;gap:4px}.sort-option{padding:6px 3px}.sort-option b{font-size:.52rem}.sort-option small{font-size:.52rem}.sort-progress{margin-top:6px;gap:3px}.sort-progress div{padding:4px;font-size:.48rem}
-  .response-layout{grid-template-rows:27% 73%}.response-card{padding:9px}.response-card h3{font-size:.82rem;margin-bottom:4px}.response-card .choice{font-size:.6rem;padding:6px}.need-box{padding:6px;margin-bottom:5px}.need-box strong{font-size:.66rem}.response-card .feedback{font-size:.57rem}
-  .complete-panel{height:70%;padding:12px}.complete-panel h2{font-size:1.34rem}.final-rule{margin:6px 0;gap:3px}.final-rule div{padding:5px 4px}.final-rule b{font-size:.51rem}.final-rule small{font-size:.53rem}.glorb-quote{font-size:.58rem;margin:6px 0}.certificate-cta{padding:6px}.certificate-cta p{display:none}
-  .certificate{width:100%;height:auto;max-height:100%;grid-template-columns:25% 75%;gap:9px;padding:24px 18px}.certificate-copy h1{font-size:1.45rem}.certificate-name{font-size:1.35rem}.certificate-summary{font-size:.62rem}.certificate-tools div{padding:5px 2px}.certificate-tools b{font-size:.48rem}.certificate-tools small{font-size:.48rem}.certificate-footer{font-size:.46rem}.certificate-actions{right:5px;bottom:5px}.certificate-actions .button{padding:5px 6px;min-height:30px;font-size:.48rem}
-}
+
 
 @media(max-height:650px) and (min-width:601px){#app{padding:6px 12px}.screen{height:100%}.paper-panel{padding:18px 24px}.story-copy{font-size:.82rem}.learn-shell,.hub-shell,.activity-shell{padding:12px}.helper-strip{padding:7px 12px}.helper-strip img{width:55px;height:55px}.mission-card{padding:12px}.case-card,.answer-card,.sort-card-main,.response-card{padding:14px}.certificate{max-height:100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -90,3 +77,361 @@ button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .teacher-panel{display:none}.teacher-panel.active{display:block}
 .info-grid{display:grid;gap:14px}.info-grid.two-col{grid-template-columns:1fr 1fr}.info-card{background:#fff;border:1px solid #cdd3d8;border-radius:20px;padding:20px 22px}.info-card.wide{grid-column:1/-1}.info-card h3{margin:0 0 8px;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}.info-card p{margin:0;font-size:.96rem;line-height:1.5}.info-card .sequence{font-size:1.25rem;font-weight:850;letter-spacing:.02em}.info-card.important{border-left:6px solid var(--orange);background:#fff8ee}.evidence-layout{display:grid;grid-template-columns:.9fr 1.25fr;gap:16px}.evidence-cards{display:grid;gap:12px}.references-card{align-self:start}.teacher-refs{margin:8px 0 0;padding-left:1.35rem;display:grid;gap:12px}.teacher-refs li{font-size:.9rem;line-height:1.45}.teacher-panel a{color:#0d2d4c;text-decoration-thickness:1px;text-underline-offset:2px}
 @media(max-width:820px){.teacher-card{width:98vw;border-radius:18px}.teacher-head{padding:18px}.teacher-close{width:50px;height:50px}.teacher-tabs{padding:12px;gap:6px;overflow-x:auto;flex-wrap:nowrap}.teacher-tab{white-space:nowrap;padding:9px 14px;font-size:.78rem}.teacher-panels{padding:14px;max-height:calc(92vh - 168px)}.info-grid.two-col,.evidence-layout{grid-template-columns:1fr}.info-card.wide{grid-column:auto}.info-card{padding:16px}.info-card p{font-size:.9rem}}
+
+/* ============================================================
+   2026-09-02 MOBILE AUDIT REBUILD
+   One authoritative phone breakpoint. No percentage-height rows.
+   The phone layout uses natural document flow + scrolling.
+   Desktop and tablet rules above remain unchanged.
+   ============================================================ */
+@media (max-width:600px){
+  :root{--phone-gutter:10px}
+
+  html,body{width:100%;height:100%;overflow:hidden}
+
+  /* Compact, touch-safe phone navigation */
+  .topbar{
+    height:52px;
+    padding:0 8px;
+    gap:0;
+  }
+  .brand{display:none}
+  .top-actions{width:100%;justify-content:center;gap:7px}
+  .top-control{
+    min-width:44px;
+    min-height:40px;
+    height:40px;
+    padding:7px 12px;
+    font-size:.72rem;
+  }
+  #forwardBtn{display:none}
+  #backBtn{width:44px;padding:0;display:grid;place-items:center}
+  #backBtn .nav-word{display:none}
+  #readBtn{width:44px;padding:0;display:grid;place-items:center}
+  #readBtn #readLabel{display:none}
+  #readBtn .sound-icon{font-size:1.08rem}
+  #helpBtn{padding-inline:12px}
+  #teacherBtn{padding-inline:12px}
+  .teacher-full{display:none}
+  .teacher-short{display:inline}
+
+  .mission-progress{top:52px;height:4px}
+
+  /* The app is the scroll container on phone. Nothing else is forced to viewport height. */
+  #app{
+    inset:56px 0 0 0;
+    padding:8px var(--phone-gutter) calc(20px + env(safe-area-inset-bottom));
+    display:block;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-y:contain;
+  }
+  .screen{
+    width:100%;
+    height:auto;
+    min-height:0;
+    display:block;
+    animation:none;
+  }
+  .shell{
+    width:100%;
+    height:auto;
+    min-height:0;
+    overflow:hidden;
+    box-shadow:none;
+  }
+
+  /* Shared phone typography and controls */
+  h1{font-size:clamp(2rem,10.7vw,2.8rem);line-height:.95}
+  h2{font-size:clamp(1.55rem,7.5vw,2rem);line-height:1.02}
+  h3{font-size:1.05rem}
+  .eyebrow{font-size:.64rem;margin-bottom:7px}
+  .lead{font-size:.94rem;line-height:1.42}
+  .button{min-height:44px;padding:10px 13px;font-size:.65rem}
+
+  /* ---------- COVER ---------- */
+  .cover-shell{
+    min-height:calc(100dvh - 76px);
+    display:flex;
+  }
+  .cover-frame{
+    width:100%;
+    min-height:calc(100dvh - 76px);
+    padding:8px;
+    display:flex;
+  }
+  .cover-inner{
+    width:100%;
+    min-height:calc(100dvh - 92px);
+    padding:14px 14px 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:14px;
+  }
+  .cover-inner::before{inset:9px}
+  .cover-art{
+    position:relative;
+    left:auto;right:auto;top:auto;bottom:auto;
+    width:min(50vw,205px);
+    margin:0 0 0 2px;
+    overflow:hidden;
+    flex:0 0 auto;
+  }
+  .cover-art img{
+    display:block;
+    width:185%;
+    max-width:none;
+    height:auto;
+    transform:translateX(-22%);
+    transform-origin:left top;
+  }
+  .cover-copy{position:relative;width:100%;max-width:none;margin:0;padding:0}
+  .cover-kicker{text-align:left;margin:0 0 8px;font-size:.62rem}
+  .cover-title{font-size:clamp(2.15rem,11vw,3rem);line-height:.93;margin:0 0 12px}
+  .cover-signal{width:100%;max-width:none;grid-template-columns:auto 1fr auto;gap:7px;margin:0 0 11px}
+  .cover-signal-label,.cover-signal-value{font-size:.59rem}
+  .cover-signal-bar{grid-template-columns:repeat(20,1fr);gap:2px}
+  .cover-signal-bar i:nth-child(n+21){display:none}
+  .cover-signal-bar i{height:8px}
+  .cover-status{font-size:.82rem;margin:0 0 11px}
+  .cover-button{width:100%;min-width:0;margin:0}
+
+  /* ---------- SPLIT / STORY / INTRO / BRIEFING / COMPLETE ---------- */
+  .split,.boot-shell,.story-shell,.briefing-shell,.complete-shell{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+    align-content:start;
+  }
+  .split>.visual-panel,.split>.paper-panel{height:auto;min-height:0}
+
+  .visual-panel{
+    height:230px;
+    padding:12px;
+    border-right:0;
+    border-bottom:1px solid rgba(16,39,67,.12);
+  }
+  .visual-panel img{width:auto;height:auto;max-width:82%;max-height:100%;object-fit:contain}
+
+  .boot-shell .visual-panel{height:180px}
+  .boot-shell .visual-panel img{max-width:62%}
+  .story-shell .visual-panel{height:245px}
+  .story-shell .visual-panel img{max-width:78%}
+  .briefing-shell .visual-panel{height:190px}
+  .complete-shell .visual-panel{height:185px}
+
+  .paper-panel,.paper-panel.compact,.complete-panel{
+    height:auto;
+    min-height:0;
+    overflow:visible;
+    justify-content:flex-start;
+    padding:18px 16px;
+  }
+  .boot-copy{width:100%;max-width:none}
+  .orientation{font-size:.84rem;line-height:1.4;margin-bottom:11px}
+  .boot-rule{grid-template-columns:repeat(4,1fr);gap:5px;margin:13px 0}
+  .boot-rule div{padding:8px 3px}
+  .boot-rule b{font-size:.55rem}
+  .name-row{margin-top:10px;gap:7px}
+  .name-row input{min-width:0;padding:10px 11px;font-size:16px}
+  .fine{font-size:.68rem;line-height:1.35;margin-top:7px}
+
+  /* Story controls are in normal flow, directly after the copy. */
+  .story-copy{font-size:.82rem;line-height:1.48}
+  .story-nav{margin-top:18px;padding-top:0;display:flex;align-items:center;justify-content:space-between}
+  .story-nav .button{margin-left:auto}
+  .count{font-size:.62rem}
+
+  .briefing-list{gap:6px;margin:12px 0}
+  .briefing-list div{padding:8px 9px}
+  .briefing-list span{width:25px;height:25px}
+  .briefing-list b{font-size:.8rem}
+  .briefing-list small{font-size:.7rem}
+  .intention{font-size:.76rem;line-height:1.4;margin:10px 0 13px;padding:8px 10px}
+
+  /* ---------- LEARN ---------- */
+  .learn-shell{
+    height:auto;
+    min-height:0;
+    padding:11px;
+    display:grid;
+    grid-template-rows:auto auto auto;
+    gap:10px;
+  }
+  .mini-head{align-items:end;padding-bottom:9px}
+  .mini-head h2{font-size:1.42rem;margin:0}
+  .step-count{font-size:.58rem}
+  .learn-card{
+    height:auto;
+    min-height:0;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+  }
+  .learn-visual{
+    height:225px;
+    min-height:0;
+    padding:12px;
+    border-bottom:1px solid rgba(16,39,67,.12);
+  }
+  .learn-visual img{width:auto;height:auto;max-width:82%;max-height:100%;object-fit:contain}
+  .learn-copy{height:auto;min-height:0;justify-content:flex-start;padding:17px 15px}
+  .learn-copy h2{font-size:1.65rem;margin-bottom:8px}
+  .learn-copy .lead{font-size:.92rem;margin-bottom:9px}
+  .remember{margin-top:8px;padding:10px 11px;font-size:.78rem;line-height:1.4}
+  .glorb-note{margin:9px 0 0;font-size:.68rem;line-height:1.4}
+  .learn-footer{min-height:0;margin-top:0;align-items:center}
+  .learn-footer>div:last-child{display:flex;gap:6px}
+
+  /* ---------- HUB ---------- */
+  .hub-shell{
+    height:auto;min-height:0;
+    padding:11px;
+    display:grid;
+    grid-template-rows:auto auto auto;
+    gap:9px;
+  }
+  .hub-shell h2{font-size:1.4rem}
+  .helper-strip{grid-template-columns:54px 1fr;gap:9px;padding:8px 10px}
+  .helper-strip img{width:50px;height:50px}
+  .helper-strip p{font-size:.72rem;line-height:1.35}
+  .mission-grid{display:grid;grid-template-columns:1fr;gap:7px;height:auto}
+  .mission-card{
+    min-height:96px;
+    padding:11px 12px;
+    display:grid;
+    grid-template-columns:45px 1fr auto;
+    align-items:center;
+    gap:9px;
+  }
+  .mission-card .num{grid-column:1;font-size:.55rem}
+  .mission-card>div{grid-column:2}
+  .mission-card strong{font-size:.9rem;margin:0 0 4px}
+  .mission-card p{font-size:.72rem;line-height:1.35}
+  .mission-card em{grid-column:3;margin:0;font-size:.53rem;white-space:nowrap}
+
+  /* ---------- ALL ACTIVITIES ---------- */
+  .activity-shell{
+    height:auto;min-height:0;
+    padding:10px;
+    display:grid;
+    grid-template-rows:auto auto auto;
+    gap:9px;
+  }
+  .activity-head{gap:8px;align-items:flex-start}
+  .activity-head h2{font-size:1.5rem}
+  .activity-sub{font-size:.7rem;line-height:1.35;margin-top:4px}
+  .activity-head .step-count{flex:0 0 auto;padding-top:2px}
+  .activity-foot{margin-top:0;min-height:44px;gap:8px}
+  .small-status{font-size:.54rem;line-height:1.3}
+
+  /* Mission 1: stack the case art above the clues so the image stays readable. */
+  .case-board{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .case-card,.answer-card{height:auto;min-height:0;overflow:visible}
+  .case-card{display:block;padding:14px}
+  .case-image{width:min(100%,270px);height:205px;margin:0 auto 13px;padding:8px}
+  .case-text{font-size:.82rem;line-height:1.4}
+  .clue-grid{grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .clue{min-height:58px;padding:8px}
+  .clue b{font-size:.58rem}
+  .clue small{font-size:.69rem;line-height:1.3}
+  .answer-card{padding:14px;justify-content:flex-start}
+  .answer-card h3{font-size:1.05rem;margin-bottom:8px}
+  .choices{gap:7px}
+  .choice{min-height:44px;padding:10px 11px;font-size:.8rem}
+  .feedback{min-height:0;margin-top:8px;padding:9px 10px;font-size:.72rem;line-height:1.4}
+  #caseNext{margin-top:9px}
+
+  /* Mission 2 */
+  .sort-layout{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .sort-visual{height:215px;min-height:0;padding:12px;border-bottom:1px solid rgba(16,39,67,.12)}
+  .sort-visual img{max-width:80%;max-height:100%;object-fit:contain}
+  .sort-card-main{height:auto;min-height:0;justify-content:flex-start;padding:14px}
+  .sort-situation{font-size:1rem;line-height:1.4;margin-bottom:12px}
+  .sort-options{grid-template-columns:repeat(3,1fr);gap:6px}
+  .sort-option{min-height:70px;padding:9px 5px}
+  .sort-option b{font-size:.58rem}
+  .sort-option small{font-size:.62rem;line-height:1.25}
+  .sort-progress{margin-top:9px;gap:5px}
+  .sort-progress div{padding:6px;font-size:.52rem}
+  #sortNext{margin-top:8px}
+
+  /* Mission 3 */
+  .response-layout{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;gap:9px;height:auto}
+  .response-visual{height:215px;min-height:0;padding:12px;border-bottom:1px solid rgba(16,39,67,.12)}
+  .response-visual img{max-width:80%;max-height:100%;object-fit:contain}
+  .response-card{height:auto;min-height:0;justify-content:flex-start;padding:14px}
+  .response-card .choice{font-size:.76rem;padding:10px}
+  .need-box{padding:9px 10px;margin-bottom:10px}
+  .need-box span{font-size:.55rem}
+  .need-box strong{font-size:.76rem}
+  #responseNext{margin-top:8px}
+
+  /* ---------- COMPLETION ---------- */
+  .complete-panel{justify-content:flex-start}
+  .complete-panel h2{font-size:1.62rem}
+  .final-rule{grid-template-columns:1fr 1fr;gap:6px;margin:11px 0}
+  .final-rule div{padding:8px}
+  .final-rule b{font-size:.58rem}
+  .final-rule small{font-size:.66rem}
+  .glorb-quote{font-size:.68rem;line-height:1.4;margin:10px 0}
+  .certificate-cta{align-items:center;padding:9px 10px}
+  .certificate-cta p{font-size:.67rem}
+
+  /* ---------- CERTIFICATE ---------- */
+  .certificate-screen{height:auto;min-height:0}
+  .certificate-wrap{height:auto;min-height:0;padding:0 0 60px}
+  .certificate{
+    width:100%;
+    height:auto;
+    max-height:none;
+    aspect-ratio:auto;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:28px 20px 74px;
+  }
+  .certificate-art{height:130px}
+  .certificate-art img{max-height:100%;max-width:48%}
+  .certificate-copy h1{font-size:1.9rem}
+  .certificate-name{font-size:1.75rem;white-space:normal}
+  .certificate-summary{font-size:.76rem}
+  .certificate-tools{grid-template-columns:1fr 1fr;gap:5px}
+  .certificate-tools b{font-size:.56rem}
+  .certificate-tools small{font-size:.61rem}
+  .certificate-footer{gap:8px;font-size:.5rem}
+  .certificate-actions{left:16px;right:16px;bottom:14px;justify-content:center}
+
+  /* ---------- MODALS ---------- */
+  .modal{padding:7px;overflow:auto;-webkit-overflow-scrolling:touch}
+  .modal-card{max-height:calc(100dvh - 18px)}
+  .teacher-card{width:100%;border-radius:14px;max-height:calc(100dvh - 18px)}
+  .teacher-head{padding:14px 14px 10px}
+  .teacher-head h2{font-size:1.75rem}
+  .teacher-close{width:44px;height:44px;font-size:1.8rem}
+  .teacher-tabs{padding:9px 10px;gap:5px;overflow-x:auto;flex-wrap:nowrap}
+  .teacher-tab{white-space:nowrap;padding:8px 11px;font-size:.72rem}
+  .teacher-panels{padding:10px;max-height:calc(100dvh - 150px)}
+  .info-grid.two-col,.evidence-layout{grid-template-columns:1fr}
+  .info-card.wide{grid-column:auto}
+  .info-card{padding:13px 14px;border-radius:14px}
+  .info-card h3{font-size:1.02rem;margin-bottom:5px}
+  .info-card p{font-size:.8rem;line-height:1.42}
+  .info-card .sequence{font-size:1rem}
+  .teacher-refs li{font-size:.76rem;line-height:1.4}
+  .help-card{width:100%;padding:18px}
+  .help-card p{font-size:.84rem;line-height:1.5}
+}
+
+/* Short/narrow phones: reduce media, never manufacture blank space. */
+@media (max-width:600px) and (max-height:720px){
+  .cover-inner{gap:9px;justify-content:flex-start;padding-top:14px}
+  .cover-art{width:min(42vw,165px)}
+  .cover-title{font-size:clamp(1.95rem,10vw,2.55rem)}
+  .boot-shell .visual-panel{height:155px}
+  .story-shell .visual-panel{height:205px}
+  .briefing-shell .visual-panel,.complete-shell .visual-panel{height:165px}
+  .learn-visual,.sort-visual,.response-visual{height:185px}
+}
+
