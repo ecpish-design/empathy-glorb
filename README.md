@@ -53,3 +53,10 @@ so upload this into the branch that already has the full Empathy Mission asset s
 - On phones only, the cover artwork now sits above the title/content instead of low on the page.
 - The cover image is visually cropped/scaled so Glorb appears larger without changing the asset file.
 - The text block stays left-aligned underneath, matching the stacked mobile mock-up.
+
+
+## Final mobile spacing adjustment
+- Phone cover composition is vertically balanced within the frame so the unused space is no longer concentrated at the bottom.
+- Glorb remains above the transmission text.
+- Sizes, alignment, colours, desktop and iPad layouts remain unchanged.
+- No new assets are required.
